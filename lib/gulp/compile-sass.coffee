@@ -6,9 +6,9 @@ logger = require('../logger').Logger
 
 module.exports = ()->
   logger.info 'ASSET', "Compile core coffeescripts"
-  gulp.src(["./_sass/**/*.sass","!./_sass/**/_*.sass"]).pipe(plumber()).pipe(sass({indentedSyntax: true})).pipe(gulp.dest("./css"))
+  gulp.src(["./src/sass/**/*.sass","!./_sass/**/_*.sass"]).pipe(plumber()).pipe(sass({indentedSyntax: true})).pipe(gulp.dest("./dist/css"))
   return
 
 
 module.exports.taskName = 'compile-sass'
-module.exports.watch = 'databases/**/*.jade'
+module.exports.watch = "./src/sass/**/*.sass"

@@ -6,7 +6,9 @@ coffee = require('gulp-coffee')
 logger = require('../logger').Logger
 module.exports = ()->
   logger.info 'ASSET', "Compile core coffeescripts"
-  gulp.src("./_js/**/*.coffee").pipe(plumber()).pipe(coffee({bare:true})).pipe(concat("_app.js")).pipe(gulp.dest("./js"))
+  gulp.src("./src/coffee/angular/**/*.coffee").pipe(plumber()).pipe(coffee({bare:true})).pipe(concat("aitui_angular.js")).pipe(gulp.dest("./dist/js"))
+  gulp.src("./src/coffee/chartist/**/*.coffee").pipe(plumber()).pipe(coffee({bare:true})).pipe(concat("aitui_chartist.js")).pipe(gulp.dest("./dist/js"))
+  gulp.src("./src/coffee/utilities/**/*.coffee").pipe(plumber()).pipe(coffee({bare:true})).pipe(concat("aitui_utilities.js")).pipe(gulp.dest("./dist/js"))
   return
 
 
