@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/assignittous/aitui/issues"
   },
-  "homepage": "https://github.com/assignittous/aitui"
+  "homepage": "https://github.com/assignittous/aitui",
+  "dependencies": {
+    "gulp": "^3.9.0"
+  }
 }
