@@ -1,0 +1,173 @@
+_page.sass//  # Page
+// 
+//  This stylesheet is for managing the entire page in the viewport
+// 
+//  This also includes the header and nav structure.
+// 
+// 
+
+
+body
+
+  display: flex
+  flex-direction: row
+
+  & > md-content.md-default-theme
+    flex-grow: 1
+    display: block
+  .header-spacer
+    width: 12px
+
+header
+  position: relative
+  z-index: 1
+  background: $header-background  
+  &.green
+    background: $flat-nephritis
+  &.yellow
+    background: $flat-sunflower
+    nav, nav .td a, md-tabs.md-default-theme md-tab.active, .td.icon button
+      color: $flat-dark-asbestos !important
+
+
+  &.red
+    background: $flat-pomegranate
+  nav
+    display: flex
+    flex-direction: row
+    @include base-font
+    text-transform: uppercase  
+    color: $header-foreground
+    width: 100%
+    padding: 6px 0px
+    div
+      display: block
+    .icon
+      @include flex-width(48px)
+    .serial
+      @extend .icon
+      .number
+        height: 32px
+        letter-spacing: 1px
+        margin-top: 9px
+        padding: 0px 3px
+        width: 100%
+        text-align: center
+        @include small-subheader
+        @include base-font
+        color: black
+
+
+
+
+    .main
+      flex-grow: 1
+      .title
+        height: 32px
+        letter-spacing: 1px
+        margin-top: 6px
+        overflow: hidden
+        // adjust the baseline of the title to match the icons
+        span
+          @include small-subheader
+          color: black
+          margin-left: 6px
+          position: relative
+          @include bold-font
+          font-size: 14px
+        text-align: left
+      .subtitle
+        @extend .title
+        span
+          @include bold-font
+          font-size: 16px
+          text-transform: none
+          letter-spacing: 0
+
+
+    .icon-material-keyboard-arrow-right
+      margin: 0px 12px
+
+    a
+      text-decoration: none !important
+    a[role=menuitem]
+      width: 100%
+
+
+nav.tabs
+  display: flex
+  flex-direction: row
+  justify-content: space-around
+  & > div
+    flex-grow: 1
+  .md-button.tab
+
+    text-align: center
+    text-transform: none
+    letter-spacing: 1px
+    width: 100%
+    span
+      @include bold-font
+      font-size: $tab-text-size
+      width: 100%
+    &:hover
+      color: $hover-text-color
+    &.active
+      color: $active-text-color
+
+nav.filter-bar 
+  overflow: hidden
+  position: relative
+  background: $white
+  height: 48px
+
+  .icon, .main
+    vertical-align: top
+    .content
+      height: 48px
+      font-size: $large-icon-size
+      padding-top: 8px
+    button
+      color: $header-foreground
+      &.md-icon
+        color: $flat-wet-asphalt
+      &:hover
+        background-color: transparent !important
+  .main
+    width: 100%
+    padding: 0px 16px
+    input
+      background: none
+      border: 0px
+      border-bottom: 1px solid $flat-silver
+      width: 100%
+      height: 34px
+      border-radius: 0px
+      padding: 3px 2px  
+      font-family: aitu
+      font-size: 16px
+      &:focus
+        outline: none
+        box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px inset     
+  .icon
+    @include flex-width(48px)
+
+
+
+
+
+// This should be applied on the main ng-view tag of a page
+
+#content-section
+  width: 100%
+  display: block
+
+.blank-slate
+  width: 100%
+  padding: 10%
+  h1
+    font-size: 24px
+    @include base-font
+    color: $passive-text-color
+    text-align: center
+

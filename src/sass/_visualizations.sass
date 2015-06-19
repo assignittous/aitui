@@ -1,0 +1,82 @@
+// app.visualizations.css.sass
+
+
+.bullet-chart 
+  overflow: hidden
+  .ranges, .labels, .ticks
+    overflow: hidden
+    white-space: nowrap
+    .green
+      background: $flat-emerald
+  
+    .yellow
+      background: $flat-sunflower
+    .red
+      background: $flat-pomegranate
+    
+    div
+      display: inline-block
+      position: relative
+
+  .ticks
+    height: 6px
+    font-size: 0px
+    div
+      height: 6px
+      border-left: 1px solid black
+  .labels
+    & > div
+      width: 0px
+      overflow: visible
+      font-size: 12px
+  .measure
+    background: black
+    position: absolute
+    display: inline-block
+    z-index: 100
+
+
+.health
+  .unimportant
+    background: $flat-asbestos !important
+  .normal
+    color: $flat-asbestos
+  .critical
+    color: black !important
+
+// progress bars
+
+.progress-bars
+  margin: 0px 16px
+  display: inline-block
+  width: 200px
+  height: 10px
+  border-radius: 5px
+  background: $flat-silver
+  .bar
+    height: 10px
+    border-radius: 5px
+    background: $flat-belize-hole
+.progress-label
+  display: inline-block
+  font-size: 14px
+  color: $flat-asbestos    
+
+
+table.win-loss
+  td
+    padding: 0px 1px 1px 0px
+  div.block
+    display: block
+    width: 4px
+    height: 8px
+    &.active
+      background: $flat-asbestos
+    &.loss, &.red
+      background: #c0392b
+    &.yellow
+      background: #f1c40f
+    &.green
+      background: #16a085
+    &.blue
+      background: #2980b9

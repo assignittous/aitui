@@ -1,0 +1,72 @@
+// ## Responsive sizing
+
+$phone-min: 320px // original iphone, portrait
+$phone-max: 414px // iphone 6+, portrait
+$tablet-min: 415px // anything bigger than iphone 6+, portrait
+$tablet-max: 800px // windows tablets, portrait
+$desktop-min: 801px // anything bigger than windows tablet, portrait
+
+@mixin phone-only
+  @media  (max-width: $phone-max) 
+    @content
+@mixin tablet-only
+  @media (min-width: $tablet-min) and (max-width: $tablet-max) 
+    @content
+@mixin desktop-only
+  @media (min-width: $desktop-min)
+    @content
+
+.phone-only
+  @include tablet-only
+    display: none !important
+  @include desktop-only
+    display: none !important
+
+
+.tablet-only
+  @include phone-only
+    display: none !important
+  @include desktop-only
+    display: none !important
+    
+.desktop-only
+  @include phone-only
+    display: none !important
+  @include tablet-only
+    display: none !important  
+
+// resolutions no less than for device
+
+@mixin at-least-tablet
+  @media (min-width: $tablet-min) 
+    @content
+  
+@mixin at-least-desktop
+  @media (min-width: $desktop-min)
+    @content
+
+@mixin at-most-phone
+  @media (max-width: $phone-max) 
+    @content
+
+@mixin at-most-tablet
+  @media (max-width: $tablet-max) 
+    @content
+
+.at-least-tablet
+  @include at-most-phone
+    display: none !important
+    
+.at-least-desktop
+  @include at-most-tablet
+    display: none !important    
+
+// resolutions no greater than for device 
+
+.at-most-phone
+  @include at-least-tablet
+    display: none !important
+    
+.at-most-tablet
+  @include at-least-desktop
+    display: none !important    

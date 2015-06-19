@@ -1,0 +1,236 @@
+/*
+ * USED ONLY FOR REPORTS
+ *
+ */
+
+
+
+.container.report
+  position: fixed
+  top: 60px
+  bottom: 0px
+
+.report 
+  padding: 20px
+
+  h1 
+    font-size: 24px
+  
+  h2 
+    font-size: 18px
+
+
+
+.report-layer
+
+  width: 100%
+  min-height: 40px
+  background: #f1f1f1
+  position: fixed
+  z-index: 10000
+  top: 100%
+  left: 0px
+  -webkit-transform-origin: 100% 0
+  transform-origin: 100% 0
+  -webkit-transition-property: min-height, width, top, right
+  transition-property: min-height, width, top, right
+  -webkit-transition-duration: 0.5s
+  transition-duration: 0.5s
+  -webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1)
+  transition-timing-function: cubic-bezier(0.7,0,0.3,1)
+
+
+  nav
+    .report-header
+      display: flex
+      flex-direction: row
+      padding: 20px
+      & > div
+        flex-grow: 1
+      & > .close
+        text-align: right
+
+
+
+
+
+  &.open
+    position: fixed
+    width: 100%
+    min-height: 100%
+    top: 0px
+    right: 0px
+    overflow-x: hidden
+    overflow-y: scroll    
+    form
+      display: block
+      width: 80%
+      -webkit-transform: translate3d(0,3em,0)
+      transform: translate3d(0,3em,0)
+      background: white
+    input[type="search"]
+      border-radius: 5px
+      padding: 10px 40px
+      background: $flat-clouds
+      border-radius: 0px
+      border: 0px
+      border-bottom: 1px solid $flat-asbestos      
+      opacity: 1
+      color: black
+    .morphsearch-submit
+      pointer-events: auto
+      opacity: 1
+      -webkit-transform: translate3d(-30px,-50%,0) scale3d(1,1,1)
+      transform: translate3d(-30px,-50%,0) scale3d(1,1,1)
+      -webkit-transition: opacity 0.3s, -webkit-transform 0.3s
+      transition: opacity 0.3s, transform 0.3s
+      -webkit-transition-delay: 0.5s
+      transition-delay: 0.5s
+      -webkit-transform: translate3d(0,-50%,0) scale3d(0.5,0.5,1)
+      transform: translate3d(0,-50%,0) scale3d(0.5,0.5,1)
+    .search-close
+      opacity: 1
+      pointer-events: auto
+      -webkit-transform: scale3d(1,1,1)
+      transform: scale3d(1,1,1)
+      -webkit-transition: opacity 0.3s, -webkit-transform 0.3s
+      transition: opacity 0.3s, transform 0.3s
+      -webkit-transition-delay: 0.5s
+      transition-delay: 0.5s
+    section
+      opacity: 1
+      height: auto
+      pointer-events: auto
+      -webkit-transition: opacity 0.3s 0.5s
+      transition: opacity 0.3s 0.5s
+    .dummy-column
+      opacity: 1
+      -webkit-transform: translate3d(0,0,0)
+      transform: translate3d(0,0,0)
+      &:first-child
+        -webkit-transition-delay: 0.4s
+        transition-delay: 0.4s
+      &:nth-child(2)
+        -webkit-transition-delay: 0.45s
+        transition-delay: 0.45s
+      &:nth-child(3)
+        -webkit-transition-delay: 0.5s
+        transition-delay: 0.5s
+    & ~ .overlay
+      opacity: 1
+  &.hideInput
+    input[type=search]
+      color: transparent
+      -webkit-transition: color 0.3s
+      transition: color 0.3s
+
+  form
+    display: none
+    background: $flat-midnight-blue
+    width: 100%
+    //height 40px
+    margin: 0 auto
+    -webkit-transition-property: width, height, -webkit-transform
+    transition-property: width, height, transform
+    -webkit-transition-duration: 0.5s
+    transition-duration: 0.5s
+    -webkit-transition-timing-function: cubic-bezier(0.7,0,0.3,1)
+    transition-timing-function: cubic-bezier(0.7,0,0.3,1)
+
+    input[type=search]
+      width: 100%
+      height: 100%
+      padding: 0 10% 0 10px
+      font-size: 14px
+      border-radius: 4px
+      background: $flat-wet-asphalt
+      border: 1px solid $flat-midnight-blue
+      color: $flat-clouds
+      -webkit-transition: 0.5s cubic-bezier(0.7,0,0.3,1)
+      transition: 0.5s cubic-bezier(0.7,0,0.3,1)
+      opacity: 0
+      -webkit-box-sizing: border-box
+      box-sizing: border-box
+      &:focus
+        outline: none
+
+
+// todo - also use this for summary tabs, add appropriate class
+
+.report-layer, article.summary
+
+  md-content
+
+    color: #333
+    
+    width: 100%
+    overflow: hidden
+    padding: 15px
+
+    position: absolute
+    pointer-events: none
+
+    .report, .dashboard
+      margin: 20px
+      padding: 25px
+      background: $white
+      border: 1px solid $flat-silver
+
+      section
+        margin-bottom: 25px
+
+      // typography
+
+      h1, h2, h3
+        @include base_font
+        &.b
+          @include bold_font
+      h1  
+        font-size: 24px
+        margin-bottom: 25px
+        border-bottom: 1px solid $flat-silver
+        
+        &.title
+          font-size: 30px
+          border: none
+        
+      h2
+        font-size: 20px
+      h3
+        font-size: 16px
+        margin-bottom: 25px
+      h3.title
+        margin-top: -25px
+        
+      .metric
+        text-align: center
+        .metric-value
+          font-size: 48px
+        .metric-label
+          @include small-subheader
+      table
+        border: 0
+        border-collapse: separate
+        border-spacing: 0 5px
+        width: 100%
+        thead
+          border-bottom: 1px solid $flat-silver
+          tr
+            border-bottom: 1px solid $flat-silver
+            th
+              border-collapse: separate
+              border-spacing: 0 5px            
+        tr
+          th
+            @include small-subheader
+
+      .layout
+        display: flex
+        flex-direction: row
+
+        .layout-cell
+          flex-grow: 1
+          padding: 10px
+        @media only screen and (max-width: 720px)
+
+          flex-direction: column

@@ -1,0 +1,82 @@
+// app.panel.css.sass
+
+md-sidenav
+  &.md-closed
+    box-shadow: none
+  &.md-locked-open
+    // @include horizontal-box-shadow(-2px, 5px, 0.5)
+    @include horizontal-box-shadow(-2px, 5px, 0.5)
+    //border-right: solid 1px $flat-silver
+  width: 320px
+  overflow-x: hidden
+  @include phone-only
+    width: 90%
+  background: $sidenav-background
+
+  section
+    &.divider
+      height: 1px
+      margin: 20px 0px
+      padding: 0px 20px
+      background: $flat-silver
+  
+    &.jumper
+      min-height: 171px
+      .md-button
+        font-size: 16px
+        &.active
+          color: $active-text-color
+          @include bold-font
+    &.head
+      background: $sidenav-header-background
+      color: $sidenav-header-foreground
+      border-bottom: 1px solid $flat-silver
+      padding: 16px
+      .table.actions
+        margin-top: 24px
+        .td 
+          text-align: center
+        .td.icon
+          font-size: 24px
+          button
+            color: $sidenav-header-button-foreground
+      .td.avatar
+        width: 71px
+      .td.name
+        padding-left: 8px
+      .td
+        vertical-align: middle
+      h2, h3
+        font-family: aitu
+        font-weight: normal
+        margin: 0px
+      h2
+        font-size: 16px
+      h3
+        font-size: 14px
+
+      multi-avatar
+        img
+          border: 4px solid $flat-concrete
+          border-radius: 50%
+    h2.md-subheader
+      @include small-subheader
+
+
+    h2.md-subheader
+      margin: 0px
+      margin-top: 10px
+      
+    md-item-content
+      button.md-button
+        font-size: 13px
+        color: $flat-dark-asbestos
+        text-transform: none
+        padding: 16px
+        display: block
+        height: 100%
+        width: 100%
+        text-align: left
+        border-radius: 0px !important
+        &:hover
+          background: $hover-background
