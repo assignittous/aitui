@@ -1,0 +1,12 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="100%" height="100%" viewBox="0 0 48 48" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+    <path d="M37,18C37,10.3 30.4,4.2 22.5,5.1C16.5,5.8 11.7,10.6 11.1,16.6C10.6,21.2 12.5,25.3 15.7,27.9C17.1,29.1 18,30.8 18,32.7L18,33L30,33L30,32.9C30,31.1 30.8,29.3 32.2,28.1C35.1,25.7 37,22.1 37,18Z" style="fill:rgb(234,188,0);fill-rule:nonzero;"/>
+    <path d="M30.6,16.2L27.6,14.2C27.3,14 26.8,14 26.5,14.2L24,15.8L21.6,14.2C21.3,14 20.8,14 20.5,14.2L17.5,16.2C17.3,16.4 17.1,16.6 17.1,16.9C17.1,17.2 17.1,17.5 17.3,17.7L21.1,22.4L21.1,33L23.1,33L23.1,22C23.1,21.8 23,21.6 22.9,21.4L19.6,17.3L21.1,16.3L23.5,17.9C23.8,18.1 24.3,18.1 24.6,17.9L27,16.3L28.5,17.3L25.2,21.4C25.1,21.6 25,21.8 25,22L25,33L27,33L27,22.4L30.8,17.7C31,17.5 31.1,17.2 31,16.9C30.9,16.6 30.8,16.3 30.6,16.2Z" style="fill:white;fill-rule:nonzero;"/>
+    <circle cx="24" cy="40" r="3" style="fill:rgb(109,121,122);"/>
+    <path d="M26,41L22,41C19.8,41 18,39.2 18,37L18,32L30,32L30,37C30,39.2 28.2,41 26,41Z" style="fill:rgb(176,182,187);fill-rule:nonzero;"/>
+    <g>
+        <path d="M30,37L18.4,38.6C18.7,39.3 19.3,40 20,40.4L29.4,39.1C29.8,38.5 30,37.8 30,37Z" style="fill:rgb(109,121,122);fill-rule:nonzero;"/>
+        <path d="M18,34.7L18,36.7L30,35L30,33L18,34.7Z" style="fill:rgb(109,121,122);fill-rule:nonzero;"/>
+    </g>
+</svg>
