@@ -1,0 +1,148 @@
+_dashboard.sass// todo: consider deprecating this
+
+article.dashboard
+
+  
+
+
+
+  h1 
+    font-size: 24px
+    margin-bottom: 24px
+  h2
+
+    font-size: 18px
+
+  h3
+    font-size: 14px
+
+  h4
+    font-size: 12px  
+
+  h1, h2
+    @include phone-only
+      width: 100%
+      text-align: center    
+  .ib
+    display: inline-block
+    h3, h1
+      text-align: center
+
+  .halfwrap
+    width: 25%
+    @include phone-only
+      width: 50%
+  .de-emphasized
+    color: $flat-dark-asbestos
+    margin-top: 0px
+  .health-criteria
+
+    .criterion
+      width: 220px
+      display: inline-block
+      
+      @include phone-only
+        width: 100%
+      @include tablet-only
+
+        width: 50%        
+      radial-progress
+        display: block
+        margin-top: 24px      
+    text-align:  center
+
+  md-card
+    margin-bottom: 18px
+    padding: 12px
+    background: $card-background
+    h1 
+      font-size: 18px
+    @include phone-only
+      width: 100%  
+      max-width: 100%
+      overflow-x:hidden
+
+#personal-dashboard
+  padding-top: 20px
+
+
+.dashboard
+  padding: 20px 20px
+  background: $flat-asbestos
+
+.card
+  width: 100%
+.dashcard
+  font-family: aitu
+  border-radius: 2px
+  width: 235px
+  height: 250px
+  margin-right: 10px
+  margin-bottom: 10px
+  padding: 25px
+  // border: 1px solid $flat-concrete
+  box-shadow: 0px 0px 1px rgba(0,0,0,0.1), 0px 2px 1px rgba(0,0,0,0.1)
+  display: inline-block
+  overflow: hidden
+
+  background: white
+  
+
+  h1, h2, h3, h4
+    margin-top: 0px
+    margin-left: 10px
+    margin-right: 10px    
+    font-family: aitu-bold
+
+  h3 
+    font-size: 18px
+  h4
+    font-size: 13px
+    text-transform: uppercase
+  h1
+    font-size: 70px
+
+
+  .title
+    img
+      float: right
+
+  &.scrollable:hover
+    overflow-y: auto
+
+.dashcard.w2
+  width: 480px
+
+.dashcard.w3
+  width: 725px
+
+.dashcard.h2
+  width: 300px
+.dashcard.h3
+  width: 450px
+
+table.health
+  margin-top: 10px
+  width: 100%
+  td
+    font-family: aitu-bold
+    width: 17%
+    text-align: center
+  td.hh
+    
+    color: black
+    text-align: left
+  td.red
+    background: $flat-pomegranate
+    color: white
+  td.yellow
+    background: $flat-sunflower
+    color: black
+  td.green
+    background: $flat-green-sea
+    color: white
+  td.unimportant
+    background: $flat-asbestos
+    color: white
+.card-content
+  margin-top: 30px

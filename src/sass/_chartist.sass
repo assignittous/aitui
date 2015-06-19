@@ -1,0 +1,405 @@
+.ct-chart
+  .ct-label
+    display: block
+    width: 100%
+    height: 100%
+    fill: rgba(0, 0, 0, 0.4)
+    color: rgba(0, 0, 0, 0.4)
+    font-size: .75rem
+    text-align: left
+    &.ct-horizontal
+      display: block
+      width: 100%
+      height: 100%
+      fill: rgba(0, 0, 0, 0.4)
+      color: rgba(0, 0, 0, 0.4)
+      font-size: .75rem
+      text-align: left
+    &.ct-vertical
+      display: block
+      width: 100%
+      height: 100%
+      fill: rgba(0, 0, 0, 0.4)
+      color: rgba(0, 0, 0, 0.4)
+      font-size: .75rem
+      text-align: right
+  .ct-grid
+    stroke: rgba(0, 0, 0, 0.2)
+    stroke-width: 1px
+    stroke-dasharray: 2px
+  .ct-point
+    stroke-width: 10px
+    stroke-linecap: round
+  .ct-line
+    fill: none
+    stroke-width: 4px
+  .ct-area
+    stroke: none
+    fill-opacity: .1
+  .ct-bar
+    fill: none
+    stroke-width: 10px
+  .ct-slice.ct-donut
+    fill: none
+    stroke-width: 60px
+  .ct-series
+    &.ct-series-a
+      .ct-bar, .ct-line, .ct-point, .ct-slice.ct-donut
+        stroke: #d70206
+      .ct-area, .ct-slice:not(.ct-donut)
+        fill: #d70206
+    &.ct-series-b
+      .ct-bar, .ct-line, .ct-point, .ct-slice.ct-donut
+        stroke: #F05B4F
+      .ct-area, .ct-slice:not(.ct-donut)
+        fill: #F05B4F
+    &.ct-series-c
+      .ct-bar, .ct-line, .ct-point, .ct-slice.ct-donut
+        stroke: #F4C63D
+      .ct-area, .ct-slice:not(.ct-donut)
+        fill: #F4C63D
+    &.ct-series-d
+      .ct-bar, .ct-line, .ct-point, .ct-slice.ct-donut
+        stroke: #453D3F
+      .ct-area, .ct-slice:not(.ct-donut)
+        fill: #453D3F
+  &.ct-square
+    display: block
+    position: relative
+    width: 100%
+    &:before
+      display: block
+      float: left
+      content: ""
+      width: 0
+      height: 0
+      padding-bottom: 100%
+    &:after
+      content: ""
+      display: table
+      clear: both
+    > svg
+      display: block
+      position: absolute
+      top: 0
+      left: 0
+  &.ct-minor-second
+    display: block
+    position: relative
+    width: 100%
+    &:before
+      display: block
+      float: left
+      content: ""
+      width: 0
+      height: 0
+      padding-bottom: 93.75%
+    &:after
+      content: ""
+      display: table
+      clear: both
+    > svg
+      display: block
+      position: absolute
+      top: 0
+      left: 0
+  &.ct-major-second
+    display: block
+    position: relative
+    width: 100%
+    &:before
+      display: block
+      float: left
+      content: ""
+      width: 0
+      height: 0
+      padding-bottom: 88.8888888889%
+    &:after
+      content: ""
+      display: table
+      clear: both
+    > svg
+      display: block
+      position: absolute
+      top: 0
+      left: 0
+  &.ct-minor-third
+    display: block
+    position: relative
+    width: 100%
+    &:before
+      display: block
+      float: left
+      content: ""
+      width: 0
+      height: 0
+      padding-bottom: 83.3333333333%
+    &:after
+      content: ""
+      display: table
+      clear: both
+    > svg
+      display: block
+      position: absolute
+      top: 0
+      left: 0
+  &.ct-major-third
+    display: block
+    position: relative
+    width: 100%
+    &:before
+      display: block
+      float: left
+      content: ""
+      width: 0
+      height: 0
+      padding-bottom: 80%
+    &:after
+      content: ""
+      display: table
+      clear: both
+    > svg
+      display: block
+      position: absolute
+      top: 0
+      left: 0
+  &.ct-perfect-fourth
+    display: block
+    position: relative
+    width: 100%
+    &:before
+      display: block
+      float: left
+      content: ""
+      width: 0
+      height: 0
+      padding-bottom: 75%
+    &:after
+      content: ""
+      display: table
+      clear: both
+    > svg
+      display: block
+      position: absolute
+      top: 0
+      left: 0
+  &.ct-perfect-fifth
+    display: block
+    position: relative
+    width: 100%
+    &:before
+      display: block
+      float: left
+      content: ""
+      width: 0
+      height: 0
+      padding-bottom: 66.6666666667%
+    &:after
+      content: ""
+      display: table
+      clear: both
+    > svg
+      display: block
+      position: absolute
+      top: 0
+      left: 0
+  &.ct-minor-sixth
+    display: block
+    position: relative
+    width: 100%
+    &:before
+      display: block
+      float: left
+      content: ""
+      width: 0
+      height: 0
+      padding-bottom: 62.5%
+    &:after
+      content: ""
+      display: table
+      clear: both
+    > svg
+      display: block
+      position: absolute
+      top: 0
+      left: 0
+  &.ct-golden-section
+    display: block
+    position: relative
+    width: 100%
+    &:before
+      display: block
+      float: left
+      content: ""
+      width: 0
+      height: 0
+      padding-bottom: 61.804697157%
+    &:after
+      content: ""
+      display: table
+      clear: both
+    > svg
+      display: block
+      position: absolute
+      top: 0
+      left: 0
+  &.ct-major-sixth
+    display: block
+    position: relative
+    width: 100%
+    &:before
+      display: block
+      float: left
+      content: ""
+      width: 0
+      height: 0
+      padding-bottom: 60%
+    &:after
+      content: ""
+      display: table
+      clear: both
+    > svg
+      display: block
+      position: absolute
+      top: 0
+      left: 0
+  &.ct-minor-seventh
+    display: block
+    position: relative
+    width: 100%
+    &:before
+      display: block
+      float: left
+      content: ""
+      width: 0
+      height: 0
+      padding-bottom: 56.25%
+    &:after
+      content: ""
+      display: table
+      clear: both
+    > svg
+      display: block
+      position: absolute
+      top: 0
+      left: 0
+  &.ct-major-seventh
+    display: block
+    position: relative
+    width: 100%
+    &:before
+      display: block
+      float: left
+      content: ""
+      width: 0
+      height: 0
+      padding-bottom: 53.3333333333%
+    &:after
+      content: ""
+      display: table
+      clear: both
+    > svg
+      display: block
+      position: absolute
+      top: 0
+      left: 0
+  &.ct-octave
+    display: block
+    position: relative
+    width: 100%
+    &:before
+      display: block
+      float: left
+      content: ""
+      width: 0
+      height: 0
+      padding-bottom: 50%
+    &:after
+      content: ""
+      display: table
+      clear: both
+    > svg
+      display: block
+      position: absolute
+      top: 0
+      left: 0
+  &.ct-major-tenth
+    display: block
+    position: relative
+    width: 100%
+    &:before
+      display: block
+      float: left
+      content: ""
+      width: 0
+      height: 0
+      padding-bottom: 40%
+    &:after
+      content: ""
+      display: table
+      clear: both
+    > svg
+      display: block
+      position: absolute
+      top: 0
+      left: 0
+  &.ct-major-eleventh
+    display: block
+    position: relative
+    width: 100%
+    &:before
+      display: block
+      float: left
+      content: ""
+      width: 0
+      height: 0
+      padding-bottom: 37.5%
+    &:after
+      content: ""
+      display: table
+      clear: both
+    > svg
+      display: block
+      position: absolute
+      top: 0
+      left: 0
+  &.ct-major-twelfth
+    display: block
+    position: relative
+    width: 100%
+    &:before
+      display: block
+      float: left
+      content: ""
+      width: 0
+      height: 0
+      padding-bottom: 33.3333333333%
+    &:after
+      content: ""
+      display: table
+      clear: both
+    > svg
+      display: block
+      position: absolute
+      top: 0
+      left: 0
+  &.ct-double-octave
+    display: block
+    position: relative
+    width: 100%
+    &:before
+      display: block
+      float: left
+      content: ""
+      width: 0
+      height: 0
+      padding-bottom: 25%
+    &:after
+      content: ""
+      display: table
+      clear: both
+    > svg
+      display: block
+      position: absolute
+      top: 0
+      left: 0

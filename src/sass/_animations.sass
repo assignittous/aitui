@@ -1,0 +1,1117 @@
+
+.show-collapse
+  &.ng-hide-add 
+    animation: 1s scaleOut ease
+
+    //max-height: 0px
+    //&.ng-hide-add-active
+      //opacity: .5
+      //max-height: 200px
+  &.ng-hide-remove 
+    animation: 1s scaleIn ease
+    //max-height: 200px   
+    //&.ng-hide-remove-active    
+      //max-height: 0px
+      //opacity: .5
+
+
+@keyframes scaleIn
+  from
+    transform: scale(0)
+    transition-timing-function: ease-in
+  to
+    transform: scale(1)
+
+@keyframes scaleOut
+  from
+    transform: scale(1)
+    transition-timing-function: ease-in
+  to
+    transform: scale(0)
+
+.animate-collapse
+  
+  -webkit-transition: 0.25s linear all
+  -moz-transition: 0.25s linear all
+  -o-transition: 0.25s linear all
+  transition: 0.25s linear all
+   
+  &.ng-enter
+    max-height: 0px
+    opacity: 0
+  &.ng-leave
+    &.ng-leave-active
+      max-height: 0px
+      opacity: 0
+    max-height: 200px
+    opacity: 1
+  &.ng-enter.ng-enter-active
+    max-height: 200px
+    opacity: 1
+
+
+.animate-flip-horizontal
+  &.ng-enter, &.ng-leave
+    -webkit-transition: 0.25s linear all
+    -moz-transition: 0.25s linear all
+    -o-transition: 0.25s linear all
+    transition: 0.25s linear all
+  &.ng-leave
+    max-height: 200px
+    -webkit-transform: rotateX(0deg)
+    -moz-transform: rotateX(0deg)
+    -ms-transform: rotateX(0deg)
+    -o-transform: rotateX(0deg)
+    transform: rotateX(0deg)
+    -webkit-backface-visibility: hidden
+    -moz-backface-visibility: hidden
+    -ms-backface-visibility: hidden
+    -o-backface-visibility: hidden
+    backface-visibility: hidden
+    -webkit-transition-property: -webkit-transform
+    -moz-transition-property: -moz-transform
+    -o-transition-property: -o-transform
+    transition-property: transform
+    -webkit-transition-duration: 0.25s
+    -moz-transition-duration: 0.25s
+    -o-transition-duration: 0.25s
+    transition-duration: 0.25s
+    -webkit-transform-origin: center center
+    -moz-transform-origin: center center
+    -ms-transform-origin: center center
+    -o-transform-origin: center center
+    transform-origin: center center
+    z-index: 20
+
+    &.ng-leave-active
+      max-height: 0px
+      -webkit-transform: rotateX(90deg)
+      -moz-transform: rotateX(90deg)
+      -ms-transform: rotateX(90deg)
+      -o-transform: rotateX(90deg)
+      transform: rotateX(90deg)
+      z-index: 10
+
+
+  &.ng-enter
+    max-height: 0px
+    -webkit-transform: rotateX(-90deg)
+    -moz-transform: rotateX(-90deg)
+    -ms-transform: rotateX(-90deg)
+    -o-transform: rotateX(-90deg)
+    transform: rotateX(-90deg)
+    -webkit-backface-visibility: hidden
+    -moz-backface-visibility: hidden
+    -ms-backface-visibility: hidden
+    -o-backface-visibility: hidden
+    backface-visibility: hidden
+    -webkit-transition-property: -webkit-transform
+    -moz-transition-property: -moz-transform
+    -o-transition-property: -o-transform
+    transition-property: transform
+    -webkit-transition-duration: 0.25s
+    -moz-transition-duration: 0.25s
+    -o-transition-duration: 0.25s
+    transition-duration: 0.25s
+    -webkit-transform-origin: center center
+    -moz-transform-origin: center center
+    -ms-transform-origin: center center
+    -o-transform-origin: center center
+    transform-origin: center center
+    z-index: 10
+    &.ng-enter-active
+      max-height: 200px
+      -webkit-transform: rotateX(0deg)
+      -moz-transform: rotateX(0deg)
+      -ms-transform: rotateX(0deg)
+      -o-transform: rotateX(0deg)
+      transform: rotateX(0deg)
+      z-index: 20
+.animate-if
+  &.ng-enter, &.ng-leave
+    -webkit-transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s
+    transition: all cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.5s
+  &.ng-enter
+    opacity: 0
+  &.ng-leave
+    &.ng-leave-active
+      opacity: 0
+    opacity: 1
+  &.ng-enter.ng-enter-active
+    opacity: 1
+
+.repeated-item
+  &.ng-enter, &.ng-move
+    -webkit-transition: 0.5s linear all
+    -moz-transition: 0.5s linear all
+    -o-transition: 0.5s linear all
+    transition: 0.5s linear all
+    opacity: 0
+  &.ng-enter.ng-enter-active, &.ng-move.ng-move-active
+    opacity: 1
+  &.ng-leave
+    -webkit-animation: 0.5s my_animation
+    -moz-animation: 0.5s my_animation
+    -o-animation: 0.5s my_animation
+    animation: 0.5s my_animation
+
+
+.modal-backdrop.am-fade 
+  opacity: .5
+  transition: opacity .15s linear
+  &.ng-enter 
+    opacity: 0
+    &.ng-enter-active 
+      opacity: .5
+    
+  &.ng-leave 
+    opacity: .5
+    &.ng-leave-active 
+      opacity: 0
+   
+
+// material design ripples
+.withripple 
+  position: relative
+
+.ripple-wrapper 
+  position: absolute
+  top: 0
+  left: 0
+  z-index: 1
+  width: 100%
+  height: 100%
+  overflow: hidden
+  border-radius: 2px
+
+.ripple 
+  position: absolute
+  width: 20px
+  height: 20px
+  margin-left: -10px
+  margin-top: -10px
+  border-radius: 100%
+  background-color: rgba(0, 0, 0, 0.05)
+  -webkit-transform: scale(1)
+  -ms-transform: scale(1)
+  transform: scale(1)
+  -webkit-transform-origin: 50%
+  -ms-transform-origin: 50%
+  transform-origin: 50%
+  opacity: 0
+
+.ripple.ripple-on 
+  -webkit-transition: opacity 0.15s ease-in 0s, -webkit-transform 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.1s
+  -ms-transition: opacity 0.15s ease-in 0s, -ms-transform 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.1s
+  -moz-transition: opacity 0.15s ease-in 0s, -moz-transform 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.1s
+  transition: opacity 0.15s ease-in 0s, transform 0.5s cubic-bezier(0.4, 0, 0.2, 1) 0.1s
+  opacity: 1
+
+.ripple.ripple-out 
+  -webkit-transition: opacity 0.1s linear 0s !important
+  transition: opacity 0.1s linear 0s !important
+  opacity: 0
+
+
+
+
+/*
+ *The ng-enter-active and ng-move-active
+ *are where the transition destination properties
+ *are set so that the animation knows what to
+ *animate.
+
+/*
+ *We're using CSS keyframe animations for when
+ *the leave event is triggered for the element
+ *that has the .repeated-item class
+
+@keyframes my_animation
+  from
+    opacity: 1
+  to
+    opacity: 0
+
+
+/*
+ *Unfortunately each browser vendor requires
+ *its own definition of keyframe animation code...
+@-webkit-keyframes my_animation
+  from
+    opacity: 1
+  to
+    opacity: 0
+
+
+@-moz-keyframes my_animation
+  from
+    opacity: 1
+  to
+    opacity: 0
+
+
+@-o-keyframes my_animation
+  from
+    opacity: 1
+  to
+    opacity: 0
+/**
+ * angular-motion
+ * @version v0.3.4 - 2014-10-14
+ * @link https://github.com/mgcrea/angular-motion
+ * @author Olivier Louvignes <olivier@mg-crea.com>
+ * @license MIT License, http://www.opensource.org/licenses/MIT
+
+.am-collapse
+  -webkit-animation-duration: 0.3s
+  animation-duration: 0.3s
+  -webkit-animation-timing-function: ease
+  animation-timing-function: ease
+  -webkit-animation-fill-mode: backwards
+  animation-fill-mode: backwards
+  opacity: 1
+  &.am-collapse-add, &.ng-hide-remove, &.ng-move
+    -webkit-animation-name: expand
+    animation-name: expand
+  &.am-collapse-remove, &.ng-hide
+    -webkit-animation-name: collapse
+    animation-name: collapse
+  &.ng-enter
+    visibility: hidden
+    -webkit-animation-name: expand
+    animation-name: expand
+    -webkit-animation-play-state: paused
+    animation-play-state: paused
+    &.ng-enter-active
+      visibility: visible
+      -webkit-animation-play-state: running
+      animation-play-state: running
+  &.ng-leave
+    -webkit-animation-name: collapse
+    animation-name: collapse
+    -webkit-animation-play-state: paused
+    animation-play-state: paused
+    &.ng-leave-active
+      -webkit-animation-play-state: running
+      animation-play-state: running
+
+@-webkit-keyframes expand
+  from
+    max-height: 0px
+  to
+    max-height: 500px
+
+
+@keyframes expand
+  from
+    max-height: 0px
+  to
+    max-height: 500px
+
+
+@-webkit-keyframes collapse
+  from
+    max-height: 500px
+  to
+    max-height: 0px
+
+
+@keyframes collapse
+  from
+    max-height: 500px
+  to
+    max-height: 0px
+
+
+.panel-collapse.am-collapse
+  &.in-remove
+    -webkit-animation-name: collapse
+    animation-name: collapse
+    display: block
+  &.in-add
+    -webkit-animation-name: expand
+    animation-name: expand
+
+.am-fade-and-scale
+  -webkit-animation-duration: 0.3s
+  animation-duration: 0.3s
+  -webkit-animation-timing-function: ease-in-out
+  animation-timing-function: ease-in-out
+  -webkit-animation-fill-mode: backwards
+  animation-fill-mode: backwards
+  &.ng-enter, &.am-fade-and-scale-add, &.ng-hide-remove, &.ng-move
+    -webkit-animation-name: fadeAndScaleIn
+    animation-name: fadeAndScaleIn
+  &.ng-leave, &.am-fade-and-scale-remove, &.ng-hide
+    -webkit-animation-name: fadeAndScaleOut
+    animation-name: fadeAndScaleOut
+  &.ng-enter
+    visibility: hidden
+    -webkit-animation-name: fadeAndScaleIn
+    animation-name: fadeAndScaleIn
+    -webkit-animation-play-state: paused
+    animation-play-state: paused
+    &.ng-enter-active
+      visibility: visible
+      -webkit-animation-play-state: running
+      animation-play-state: running
+  &.ng-leave
+    -webkit-animation-name: fadeAndScaleOut
+    animation-name: fadeAndScaleOut
+    -webkit-animation-play-state: paused
+    animation-play-state: paused
+    &.ng-leave-active
+      -webkit-animation-play-state: running
+      animation-play-state: running
+
+@-webkit-keyframes fadeAndScaleIn
+  from
+    opacity: 0
+    -webkit-transform: scale(0.7)
+    transform: scale(0.7)
+  to
+    opacity: 1
+
+
+@keyframes fadeAndScaleIn
+  from
+    opacity: 0
+    -webkit-transform: scale(0.7)
+    transform: scale(0.7)
+  to
+    opacity: 1
+
+
+@-webkit-keyframes fadeAndScaleOut
+  from
+    opacity: 1
+  to
+    opacity: 0
+    -webkit-transform: scale(0.7)
+    transform: scale(0.7)
+
+
+@keyframes fadeAndScaleOut
+  from
+    opacity: 1
+  to
+    opacity: 0
+    -webkit-transform: scale(0.7)
+    transform: scale(0.7)
+
+
+.am-fade-and-slide-top
+  -webkit-animation-duration: 0.3s
+  animation-duration: 0.3s
+  -webkit-animation-timing-function: ease-in-out
+  animation-timing-function: ease-in-out
+  -webkit-animation-fill-mode: backwards
+  animation-fill-mode: backwards
+  &.am-fade-and-slide-top-add, &.ng-hide-remove, &.ng-move
+    -webkit-animation-name: fadeAndSlideFromTop
+    animation-name: fadeAndSlideFromTop
+  &.am-fade-and-slide-top-remove, &.ng-hide
+    -webkit-animation-name: fadeAndSlideToTop
+    animation-name: fadeAndSlideToTop
+  &.ng-enter
+    visibility: hidden
+    -webkit-animation-name: fadeAndSlideFromTop
+    animation-name: fadeAndSlideFromTop
+    -webkit-animation-play-state: paused
+    animation-play-state: paused
+    &.ng-enter-active
+      visibility: visible
+      -webkit-animation-play-state: running
+      animation-play-state: running
+  &.ng-leave
+    -webkit-animation-name: fadeAndSlideToTop
+    animation-name: fadeAndSlideToTop
+    -webkit-animation-play-state: paused
+    animation-play-state: paused
+    &.ng-leave-active
+      -webkit-animation-play-state: running
+      animation-play-state: running
+
+.am-fade-and-slide-right
+  -webkit-animation-duration: 0.3s
+  animation-duration: 0.3s
+  -webkit-animation-timing-function: ease-in-out
+  animation-timing-function: ease-in-out
+  -webkit-animation-fill-mode: backwards
+  animation-fill-mode: backwards
+  &.am-fade-and-slide-right-add, &.ng-hide-remove, &.ng-move
+    -webkit-animation-name: fadeAndSlideFromRight
+    animation-name: fadeAndSlideFromRight
+  &.am-fade-and-slide-right-remove, &.ng-hide
+    -webkit-animation-name: fadeAndSlideToRight
+    animation-name: fadeAndSlideToRight
+  &.ng-enter
+    visibility: hidden
+    -webkit-animation-name: fadeAndSlideFromRight
+    animation-name: fadeAndSlideFromRight
+    -webkit-animation-play-state: paused
+    animation-play-state: paused
+    &.ng-enter-active
+      visibility: visible
+      -webkit-animation-play-state: running
+      animation-play-state: running
+  &.ng-leave
+    -webkit-animation-name: fadeAndSlideToRight
+    animation-name: fadeAndSlideToRight
+    -webkit-animation-play-state: paused
+    animation-play-state: paused
+    &.ng-leave-active
+      -webkit-animation-play-state: running
+      animation-play-state: running
+
+.am-fade-and-slide-bottom
+  -webkit-animation-duration: 0.3s
+  animation-duration: 0.3s
+  -webkit-animation-timing-function: ease-in-out
+  animation-timing-function: ease-in-out
+  -webkit-animation-fill-mode: backwards
+  animation-fill-mode: backwards
+  &.am-fade-and-slide-bottom-add, &.ng-hide-remove, &.ng-move
+    -webkit-animation-name: fadeAndSlideFromBottom
+    animation-name: fadeAndSlideFromBottom
+  &.am-fade-and-slide-bottom-remove, &.ng-hide
+    -webkit-animation-name: fadeAndSlideToBottom
+    animation-name: fadeAndSlideToBottom
+  &.ng-enter
+    visibility: hidden
+    -webkit-animation-name: fadeAndSlideFromBottom
+    animation-name: fadeAndSlideFromBottom
+    -webkit-animation-play-state: paused
+    animation-play-state: paused
+    &.ng-enter-active
+      visibility: visible
+      -webkit-animation-play-state: running
+      animation-play-state: running
+  &.ng-leave
+    -webkit-animation-name: fadeAndSlideToBottom
+    animation-name: fadeAndSlideToBottom
+    -webkit-animation-play-state: paused
+    animation-play-state: paused
+    &.ng-leave-active
+      -webkit-animation-play-state: running
+      animation-play-state: running
+
+.am-fade-and-slide-left
+  -webkit-animation-duration: 0.3s
+  animation-duration: 0.3s
+  -webkit-animation-timing-function: ease-in-out
+  animation-timing-function: ease-in-out
+  -webkit-animation-fill-mode: backwards
+  animation-fill-mode: backwards
+  &.am-fade-and-slide-left-add, &.ng-hide-remove, &.ng-move
+    -webkit-animation-fill-mode: backwards
+    animation-fill-mode: backwards
+    -webkit-animation-name: fadeAndSlideFromLeft
+    animation-name: fadeAndSlideFromLeft
+  &.am-fade-and-slide-left-remove, &.ng-hide
+    -webkit-animation-name: fadeAndSlideToLeft
+    animation-name: fadeAndSlideToLeft
+  &.ng-enter
+    visibility: hidden
+    -webkit-animation-name: fadeAndSlideFromLeft
+    animation-name: fadeAndSlideFromLeft
+    -webkit-animation-play-state: paused
+    animation-play-state: paused
+    &.ng-enter-active
+      visibility: visible
+      -webkit-animation-play-state: running
+      animation-play-state: running
+  &.ng-leave
+    -webkit-animation-name: fadeAndSlideToLeft
+    animation-name: fadeAndSlideToLeft
+    -webkit-animation-play-state: paused
+    animation-play-state: paused
+    &.ng-leave-active
+      -webkit-animation-play-state: running
+      animation-play-state: running
+
+@-webkit-keyframes fadeAndSlideFromTop
+  from
+    opacity: 0
+    -webkit-transform: translateY(-20%)
+    transform: translateY(-20%)
+  to
+    opacity: 1
+
+
+@keyframes fadeAndSlideFromTop
+  from
+    opacity: 0
+    -webkit-transform: translateY(-20%)
+    transform: translateY(-20%)
+  to
+    opacity: 1
+
+
+@-webkit-keyframes fadeAndSlideToTop
+  from
+    opacity: 1
+  to
+    opacity: 0
+    -webkit-transform: translateY(-20%)
+    transform: translateY(-20%)
+
+
+@keyframes fadeAndSlideToTop
+  from
+    opacity: 1
+  to
+    opacity: 0
+    -webkit-transform: translateY(-20%)
+    transform: translateY(-20%)
+
+
+@-webkit-keyframes fadeAndSlideFromRight
+  from
+    opacity: 0
+    -webkit-transform: translateX(20%)
+    transform: translateX(20%)
+  to
+    opacity: 1
+
+
+@keyframes fadeAndSlideFromRight
+  from
+    opacity: 0
+    -webkit-transform: translateX(20%)
+    transform: translateX(20%)
+  to
+    opacity: 1
+
+
+@-webkit-keyframes fadeAndSlideToRight
+  from
+    opacity: 1
+  to
+    opacity: 0
+    -webkit-transform: translateX(20%)
+    transform: translateX(20%)
+
+
+@keyframes fadeAndSlideToRight
+  from
+    opacity: 1
+  to
+    opacity: 0
+    -webkit-transform: translateX(20%)
+    transform: translateX(20%)
+
+
+@-webkit-keyframes fadeAndSlideFromBottom
+  from
+    opacity: 0
+    -webkit-transform: translateY(20%)
+    transform: translateY(20%)
+  to
+    opacity: 1
+
+
+@keyframes fadeAndSlideFromBottom
+  from
+    opacity: 0
+    -webkit-transform: translateY(20%)
+    transform: translateY(20%)
+  to
+    opacity: 1
+
+
+@-webkit-keyframes fadeAndSlideToBottom
+  from
+    opacity: 1
+  to
+    opacity: 0
+    -webkit-transform: translateY(20%)
+    transform: translateY(20%)
+
+
+@keyframes fadeAndSlideToBottom
+  from
+    opacity: 1
+  to
+    opacity: 0
+    -webkit-transform: translateY(20%)
+    transform: translateY(20%)
+
+
+@-webkit-keyframes fadeAndSlideFromLeft
+  from
+    opacity: 0
+    -webkit-transform: translateX(-20%)
+    transform: translateX(-20%)
+  to
+    opacity: 1
+
+
+@keyframes fadeAndSlideFromLeft
+  from
+    opacity: 0
+    -webkit-transform: translateX(-20%)
+    transform: translateX(-20%)
+  to
+    opacity: 1
+
+
+@-webkit-keyframes fadeAndSlideToLeft
+  from
+    opacity: 1
+  to
+    opacity: 0
+    -webkit-transform: translateX(-20%)
+    transform: translateX(-20%)
+
+
+@keyframes fadeAndSlideToLeft
+  from
+    opacity: 1
+  to
+    opacity: 0
+    -webkit-transform: translateX(-20%)
+    transform: translateX(-20%)
+
+
+.am-fade
+  -webkit-animation-duration: 0.3s
+  animation-duration: 0.3s
+  -webkit-animation-timing-function: linear
+  animation-timing-function: linear
+  -webkit-animation-fill-mode: backwards
+  animation-fill-mode: backwards
+  opacity: 1
+  &.am-fade-add, &.ng-hide-remove, &.ng-move
+    -webkit-animation-name: fadeIn
+    animation-name: fadeIn
+  &.am-fade-remove, &.ng-hide
+    -webkit-animation-name: fadeOut
+    animation-name: fadeOut
+  &.ng-enter
+    visibility: hidden
+    -webkit-animation-name: fadeIn
+    animation-name: fadeIn
+    -webkit-animation-play-state: paused
+    animation-play-state: paused
+    &.ng-enter-active
+      visibility: visible
+      -webkit-animation-play-state: running
+      animation-play-state: running
+  &.ng-leave
+    -webkit-animation-name: fadeOut
+    animation-name: fadeOut
+    -webkit-animation-play-state: paused
+    animation-play-state: paused
+    &.ng-leave-active
+      -webkit-animation-play-state: running
+      animation-play-state: running
+
+@-webkit-keyframes fadeIn
+  from
+    opacity: 0
+  to
+    opacity: 1
+
+
+@keyframes fadeIn
+  from
+    opacity: 0
+  to
+    opacity: 1
+
+
+@-webkit-keyframes fadeOut
+  from
+    opacity: 1
+  to
+    opacity: 0
+
+
+@keyframes fadeOut
+  from
+    opacity: 1
+  to
+    opacity: 0
+
+
+.tab-pane.am-fade
+  &.active-remove
+    display: none !important
+  &.active-add
+    -webkit-animation-name: fadeIn
+    animation-name: fadeIn
+
+.modal-backdrop.am-fade, .aside-backdrop.am-fade
+  background: rgba(0, 0, 0, 0.5)
+  -webkit-animation-duration: 0.15s
+  animation-duration: 0.15s
+
+.modal-backdrop.am-fade.ng-leave, .aside-backdrop.am-fade.ng-leave
+  -webkit-animation-delay: 0.3s
+  animation-delay: 0.3s
+
+.am-flip-x
+  -webkit-animation-duration: 0.4s
+  animation-duration: 0.4s
+  -webkit-animation-timing-function: ease
+  animation-timing-function: ease
+  -webkit-animation-fill-mode: backwards
+  animation-fill-mode: backwards
+  &.am-flip-x-add, &.ng-hide-remove, &.ng-move
+    -webkit-animation-name: flipInXBounce
+    animation-name: flipInXBounce
+  &.am-flip-x-remove, &.ng-hide
+    -webkit-animation-name: flipOutX
+    animation-name: flipOutX
+  &.ng-enter
+    visibility: hidden
+    -webkit-animation-name: flipInXBounce
+    animation-name: flipInXBounce
+    -webkit-animation-play-state: paused
+    animation-play-state: paused
+    &.ng-enter-active
+      visibility: visible
+      -webkit-animation-play-state: running
+      animation-play-state: running
+  &.ng-leave
+    -webkit-animation-name: flipOutX
+    animation-name: flipOutX
+    -webkit-animation-play-state: paused
+    animation-play-state: paused
+    &.ng-leave-active
+      -webkit-animation-play-state: running
+      animation-play-state: running
+
+.am-flip-x-linear
+  -webkit-animation-duration: 0.4s
+  animation-duration: 0.4s
+  -webkit-animation-timing-function: ease
+  animation-timing-function: ease
+  -webkit-animation-fill-mode: backwards
+  animation-fill-mode: backwards
+  &.am-flip-x-add, &.ng-hide-remove, &.ng-move
+    -webkit-animation-name: flipInX
+    animation-name: flipInX
+  &.am-flip-x-remove, &.ng-hide
+    -webkit-animation-name: flipOutX
+    animation-name: flipOutX
+  &.ng-enter
+    visibility: hidden
+    -webkit-animation-name: flipInX
+    animation-name: flipInX
+    -webkit-animation-play-state: paused
+    animation-play-state: paused
+    &.ng-enter-active
+      visibility: visible
+      -webkit-animation-play-state: running
+      animation-play-state: running
+  &.ng-leave
+    -webkit-animation-name: flipOutX
+    animation-name: flipOutX
+    -webkit-animation-play-state: paused
+    animation-play-state: paused
+    &.ng-leave-active
+      -webkit-animation-play-state: running
+      animation-play-state: running
+
+@-webkit-keyframes flipInX
+  from
+    opacity: 0
+    -webkit-transform: perspective(400px) rotateX(90deg)
+    transform: perspective(400px) rotateX(90deg)
+  to
+    opacity: 1
+    -webkit-transform: perspective(400px) rotateX(0deg)
+    transform: perspective(400px) rotateX(0deg)
+
+
+@keyframes flipInX
+  from
+    opacity: 0
+    -webkit-transform: perspective(400px) rotateX(90deg)
+    transform: perspective(400px) rotateX(90deg)
+  to
+    opacity: 1
+    -webkit-transform: perspective(400px) rotateX(0deg)
+    transform: perspective(400px) rotateX(0deg)
+
+
+@-webkit-keyframes flipInXBounce
+  from
+    opacity: 0
+    -webkit-transform: perspective(400px) rotateX(90deg)
+    transform: perspective(400px) rotateX(90deg)
+  40%
+    -webkit-transform: perspective(400px) rotateX(-10deg)
+    transform: perspective(400px) rotateX(-10deg)
+  70%
+    -webkit-transform: perspective(400px) rotateX(10deg)
+    transform: perspective(400px) rotateX(10deg)
+  to
+    opacity: 1
+    -webkit-transform: perspective(400px) rotateX(0deg)
+    transform: perspective(400px) rotateX(0deg)
+
+
+@keyframes flipInXBounce
+  from
+    opacity: 0
+    -webkit-transform: perspective(400px) rotateX(90deg)
+    transform: perspective(400px) rotateX(90deg)
+  40%
+    -webkit-transform: perspective(400px) rotateX(-10deg)
+    transform: perspective(400px) rotateX(-10deg)
+  70%
+    -webkit-transform: perspective(400px) rotateX(10deg)
+    transform: perspective(400px) rotateX(10deg)
+  to
+    opacity: 1
+    -webkit-transform: perspective(400px) rotateX(0deg)
+    transform: perspective(400px) rotateX(0deg)
+
+
+@-webkit-keyframes flipOutX
+  from
+    opacity: 1
+    -webkit-transform: perspective(400px) rotateX(0deg)
+    transform: perspective(400px) rotateX(0deg)
+  to
+    opacity: 0
+    -webkit-transform: perspective(400px) rotateX(90deg)
+    transform: perspective(400px) rotateX(90deg)
+
+
+@keyframes flipOutX
+  from
+    opacity: 1
+    -webkit-transform: perspective(400px) rotateX(0deg)
+    transform: perspective(400px) rotateX(0deg)
+  to
+    opacity: 0
+    -webkit-transform: perspective(400px) rotateX(90deg)
+    transform: perspective(400px) rotateX(90deg)
+
+
+.am-slide-top
+  -webkit-animation-duration: 0.3s
+  animation-duration: 0.3s
+  -webkit-animation-timing-function: ease-in-out
+  animation-timing-function: ease-in-out
+  -webkit-animation-fill-mode: backwards
+  animation-fill-mode: backwards
+  &.am-slide-top-add, &.ng-hide-remove, &.ng-move
+    -webkit-animation-name: slideFromTop
+    animation-name: slideFromTop
+  &.am-slide-top-remove, &.ng-hide
+    -webkit-animation-name: slideToTop
+    animation-name: slideToTop
+  &.ng-enter
+    visibility: hidden
+    -webkit-animation-name: slideFromTop
+    animation-name: slideFromTop
+    -webkit-animation-play-state: paused
+    animation-play-state: paused
+    &.ng-enter-active
+      visibility: visible
+      -webkit-animation-play-state: running
+      animation-play-state: running
+  &.ng-leave
+    -webkit-animation-name: slideToTop
+    animation-name: slideToTop
+    -webkit-animation-play-state: paused
+    animation-play-state: paused
+    &.ng-leave-active
+      -webkit-animation-play-state: running
+      animation-play-state: running
+
+.am-slide-right
+  -webkit-animation-duration: 0.3s
+  animation-duration: 0.3s
+  -webkit-animation-timing-function: ease-in-out
+  animation-timing-function: ease-in-out
+  -webkit-animation-fill-mode: backwards
+  animation-fill-mode: backwards
+  &.am-slide-right-add, &.ng-hide-remove, &.ng-move
+    -webkit-animation-name: slideFromRight
+    animation-name: slideFromRight
+  &.am-slide-right-remove, &.ng-hide
+    -webkit-animation-name: slideToRight
+    animation-name: slideToRight
+  &.ng-enter
+    visibility: hidden
+    -webkit-animation-name: slideFromRight
+    animation-name: slideFromRight
+    -webkit-animation-play-state: paused
+    animation-play-state: paused
+    &.ng-enter-active
+      visibility: visible
+      -webkit-animation-play-state: running
+      animation-play-state: running
+  &.ng-leave
+    -webkit-animation-name: slideToRight
+    animation-name: slideToRight
+    -webkit-animation-play-state: paused
+    animation-play-state: paused
+    &.ng-leave-active
+      -webkit-animation-play-state: running
+      animation-play-state: running
+
+.am-slide-bottom
+  -webkit-animation-duration: 0.3s
+  animation-duration: 0.3s
+  -webkit-animation-timing-function: ease-in-out
+  animation-timing-function: ease-in-out
+  -webkit-animation-fill-mode: backwards
+  animation-fill-mode: backwards
+  &.am-slide-bottom-add, &.ng-hide-remove, &.ng-move
+    -webkit-animation-name: slideFromBottom
+    animation-name: slideFromBottom
+  &.am-slide-bottom-remove, &.ng-hide
+    -webkit-animation-name: slideToBottom
+    animation-name: slideToBottom
+  &.ng-enter
+    visibility: hidden
+    -webkit-animation-name: slideFromBottom
+    animation-name: slideFromBottom
+    -webkit-animation-play-state: paused
+    animation-play-state: paused
+    &.ng-enter-active
+      visibility: visible
+      -webkit-animation-play-state: running
+      animation-play-state: running
+  &.ng-leave
+    -webkit-animation-name: slideToBottom
+    animation-name: slideToBottom
+    -webkit-animation-play-state: paused
+    animation-play-state: paused
+    &.ng-leave-active
+      -webkit-animation-play-state: running
+      animation-play-state: running
+
+.am-slide-left
+  -webkit-animation-duration: 0.3s
+  animation-duration: 0.3s
+  -webkit-animation-timing-function: ease-in-out
+  animation-timing-function: ease-in-out
+  -webkit-animation-fill-mode: backwards
+  animation-fill-mode: backwards
+  &.am-slide-left-add, &.ng-hide-remove, &.ng-move
+    -webkit-animation-name: slideFromLeft
+    animation-name: slideFromLeft
+  &.am-slide-left-remove, &.ng-hide
+    -webkit-animation-name: slideToLeft
+    animation-name: slideToLeft
+  &.ng-enter
+    visibility: hidden
+    -webkit-animation-name: slideFromLeft
+    animation-name: slideFromLeft
+    -webkit-animation-play-state: paused
+    animation-play-state: paused
+    &.ng-enter-active
+      visibility: visible
+      -webkit-animation-play-state: running
+      animation-play-state: running
+  &.ng-leave
+    -webkit-animation-name: slideToLeft
+    animation-name: slideToLeft
+    -webkit-animation-play-state: paused
+    animation-play-state: paused
+    &.ng-leave-active
+      -webkit-animation-play-state: running
+      animation-play-state: running
+
+@-webkit-keyframes slideFromTop
+  from
+    -webkit-transform: translateY(-100%)
+    transform: translateY(-100%)
+
+
+@keyframes slideFromTop
+  from
+    -webkit-transform: translateY(-100%)
+    transform: translateY(-100%)
+
+
+@-webkit-keyframes slideToTop
+  to
+    -webkit-transform: translateY(-100%)
+    transform: translateY(-100%)
+
+
+@keyframes slideToTop
+  to
+    -webkit-transform: translateY(-100%)
+    transform: translateY(-100%)
+
+
+@-webkit-keyframes slideFromRight
+  from
+    -webkit-transform: translateX(100%)
+    transform: translateX(100%)
+
+
+@keyframes slideFromRight
+  from
+    -webkit-transform: translateX(100%)
+    transform: translateX(100%)
+
+
+@-webkit-keyframes slideToRight
+  to
+    -webkit-transform: translateX(100%)
+    transform: translateX(100%)
+
+
+@keyframes slideToRight
+  to
+    -webkit-transform: translateX(100%)
+    transform: translateX(100%)
+
+
+@-webkit-keyframes slideFromBottom
+  from
+    -webkit-transform: translateY(100%)
+    transform: translateY(100%)
+
+
+@keyframes slideFromBottom
+  from
+    -webkit-transform: translateY(100%)
+    transform: translateY(100%)
+
+
+@-webkit-keyframes slideToBottom
+  to
+    -webkit-transform: translateY(100%)
+    transform: translateY(100%)
+
+
+@keyframes slideToBottom
+  to
+    -webkit-transform: translateY(100%)
+    transform: translateY(100%)
+
+
+@-webkit-keyframes slideFromLeft
+  from
+    -webkit-transform: translateX(-100%)
+    transform: translateX(-100%)
+
+
+@keyframes slideFromLeft
+  from
+    -webkit-transform: translateX(-100%)
+    transform: translateX(-100%)
+
+
+@-webkit-keyframes slideToLeft
+  to
+    -webkit-transform: translateX(-100%)
+    transform: translateX(-100%)
+
+
+@keyframes slideToLeft
+  to
+    -webkit-transform: translateX(-100%)
+    transform: translateX(-100%)

@@ -1,0 +1,477 @@
+.icon-checkbox, .icon-radio
+  button
+    border: none
+    background: none
+    font-family: aitu
+    i
+      line-height: 32px
+      display: inline-block
+      left: 1px
+      font-family: "Aitu-Material-Design-Icons-Regular"
+      speak: none
+      font-style: normal
+      font-weight: normal
+      font-variant: normal
+      text-transform: none
+      -webkit-font-smoothing: antialiased
+      -moz-osx-font-smoothing: grayscale    
+      color: $flat-dark-asbestos
+      font-size: 24px
+      -webkit-transition: .5s linear
+      -moz-transition: .5s linear
+      -o-transition: .5s linear
+      transition: .5s linear
+      height: 36px
+      width: 36px
+      border-radius:  16px
+
+      &.checked
+        -webkit-transition: .5s linear
+        -moz-transition: .5s linear
+        -o-transition: .5s linear
+        transition: .5s linear      
+        color: $flat-nephritis
+        font-size: 24px
+    &:active
+      i
+        -webkit-transition: .5s linear
+        -moz-transition: .5s linear
+        -o-transition: .5s linear
+        transition: .5s linear        
+        background: $flat-dark-clouds
+        color: $flat-nephritis
+        &.checked
+          color: $flat-dark-asbestos
+
+    .checkbox-label, .radio-label
+      position: relative
+      top: -5px
+      margin-left: 12px
+
+
+.icon-checkbox
+  button
+    i
+      &:before
+        content: "\e8e2"  
+      &.checked:before
+        content: "\e8e1" !important
+
+.icon-radio
+  // todo: add media query to make this block at smaller screen widths
+  display: inline-block
+  margin-right: 12px
+  button
+    i
+      &:before
+        content: "\e8e3"  
+      &.checked:before
+        content: "\e8e4" !important
+
+// this is for ng strap
+.popover
+  background: white
+  color: black
+  input.search
+    width: 100%
+    border-bottom: 1px solid $flat-asbestos
+
+
+.aside
+  h1, h2
+    font-family: aitu-bold
+  h1, h2, ul
+    margin-bottom: 12px
+  h1
+    font-size: 24px
+  h2
+    font-size: 18px
+
+
+
+/**
+ * bootstrap-additions
+ * @version v0.2.3 - 2014-06-24
+ * @link https://github.com/mgcrea/bootstrap-additions
+ * @author Olivier Louvignes <olivier@mg-crea.com>
+ * @license MIT License, http://www.opensource.org/licenses/MIT
+
+.thumbnail
+  > img, a > img
+    display: block
+    max-width: 100%
+    height: auto
+
+.carousel-inner > .item >
+  img, a > img
+    display: block
+    max-width: 100%
+    height: auto
+
+
+
+.pager
+  &:before, &:after
+    content: " "
+    display: table
+
+.panel-body
+  &:before, &:after
+    content: " "
+    display: table
+
+.modal-footer
+  &:before, &:after
+    content: " "
+    display: table
+
+.aside .aside-dialog .aside-footer
+  &:before, &:after
+    content: " "
+    display: table
+
+.container:after, .container-fluid:after, .row:after,  .pager:after, .panel-body:after, .modal-footer:after, .aside .aside-dialog .aside-footer:after
+  clear: both
+
+/*
+ * Alerts placement
+
+.alert
+  &.top, &.top-left, &.top-right, &.bottom, &.bottom-left, &.bottom-right
+    position: fixed
+    z-index: 1050
+    margin: 20px
+  &.top, &.top-left, &.top-right
+    top: 50px
+  &.top
+    right: 0px
+    left: 0px
+  &.top-right
+    right: 0px
+    .close
+      padding-left: 10px
+  &.top-left
+    left: 0px
+    .close
+      padding-right: 10px
+  &.bottom, &.bottom-right, &.bottom-left
+    bottom: 0px
+  &.bottom
+    right: 0px
+    left: 0px
+  &.bottom-right
+    right: 0px
+    .close
+      padding-left: 10px
+  &.bottom-left
+    left: 0px
+    .close
+      padding-right: 10px
+
+/*
+ * Aside element
+
+.aside
+  position: fixed
+  top: 0
+  bottom: 0
+  z-index: 1049
+  overflow: auto
+  min-width: 320px
+  background: white
+  &:focus
+    outline: none
+  &.left
+    right: auto
+    left: 0
+  &.right
+    right: 0
+    left: auto
+  .aside-dialog
+    .aside-header
+      padding: 15px
+      border-bottom: 1px solid #e5e5e5
+      min-height: 16.42857143px
+      padding: 6px 15px
+      background: #428bca
+      color: white
+      .close
+        margin-right: -8px
+        padding: 4px 8px
+        color: white
+        font-size: 25px
+        opacity: .8
+    .aside-body
+      position: relative
+      padding: 20px
+    .aside-footer
+      margin-top: 15px
+      padding: 19px 20px 20px
+      text-align: right
+      border-top: 1px solid #e5e5e5
+
+
+@media (max-width: 991px)
+  .aside
+    min-width: 240px
+
+.aside-backdrop
+  position: fixed
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  z-index: 1040
+  background-color: #000000
+  &.fade
+    opacity: 0
+    filter: alpha(opacity = 0)
+  &.in
+    opacity: 0.5
+    filter: alpha(opacity = 50)
+
+/*
+ * Callouts
+ *
+ * Not quite alerts, but custom and helpful notes for folks reading the docs.
+ * Requires a base and modifier class.
+
+.callout
+  margin: 20px 0
+  padding: 20px
+  border-left: 3px solid #eee
+  h4
+    margin-top: 0
+    margin-bottom: 5px
+  p:last-child
+    margin-bottom: 0
+
+/* Variations
+
+.callout-danger
+  border-color: #eed3d7
+  background-color: #fdf7f7
+  h4
+    color: #b94a48
+
+.callout-warning
+  border-color: #faebcc
+  background-color: #faf8f0
+  h4
+    color: #8a6d3b
+
+.callout-info
+  border-color: #bce8f1
+  background-color: #f4f8fa
+  h4
+    color: #34789a
+
+/*
+ * Datepicker element
+
+.datepicker.dropdown-menu
+  width: 250px
+  height: 270px
+  button
+    outline: none
+    border: 0px
+  tbody
+    height: 180px
+    button
+      padding: 6px
+  &.datepicker-mode-1 tbody button, &.datepicker-mode-2 tbody button
+    height: 65px
+
+.modal.center .modal-dialog
+  position: fixed
+  top: 40%
+  left: 50%
+  min-width: 320px
+  max-width: 630px
+  width: 50%
+  -webkit-transform: translateX(-50%) translateY(-50%)
+  transform: translateX(-50%) translateY(-50%)
+
+/*
+ * Popovers corner placement
+ *
+ * Inherit exotic positionning from basic ones & fix arrow placement
+
+.popover
+  &.top-left
+    margin-top: -10px
+    .arrow
+      left: 50%
+      margin-left: -11px
+      border-bottom-width: 0
+      border-top-color: #999999
+      border-top-color: rgba(0, 0, 0, 0.25)
+      bottom: -11px
+      left: 10%
+      &:after
+        content: " "
+        bottom: 1px
+        margin-left: -10px
+        border-bottom-width: 0
+        border-top-color: #ffffff
+  &.top-right
+    margin-top: -10px
+    .arrow
+      left: 50%
+      margin-left: -11px
+      border-bottom-width: 0
+      border-top-color: #999999
+      border-top-color: rgba(0, 0, 0, 0.25)
+      bottom: -11px
+      left: 90%
+      &:after
+        content: " "
+        bottom: 1px
+        margin-left: -10px
+        border-bottom-width: 0
+        border-top-color: #ffffff
+  &.bottom-left
+    margin-top: 10px
+    .arrow
+      left: 50%
+      margin-left: -11px
+      border-top-width: 0
+      border-bottom-color: #999999
+      border-bottom-color: rgba(0, 0, 0, 0.25)
+      top: -11px
+      left: 10%
+      &:after
+        content: " "
+        top: 1px
+        margin-left: -10px
+        border-top-width: 0
+        border-bottom-color: #ffffff
+  &.bottom-right
+    margin-top: 10px
+    .arrow
+      left: 50%
+      margin-left: -11px
+      border-top-width: 0
+      border-bottom-color: #999999
+      border-bottom-color: rgba(0, 0, 0, 0.25)
+      top: -11px
+      left: 90%
+      &:after
+        content: " "
+        top: 1px
+        margin-left: -10px
+        border-top-width: 0
+        border-bottom-color: #ffffff
+
+/*
+ * Timepicker element
+
+.timepicker.dropdown-menu
+  padding: 0 4px
+  button
+    outline: none
+    border: 0px
+  tbody button
+    padding: 6px
+
+/*
+ * Fancy tooltips
+ *
+
+.tooltip
+  &.tooltip-info
+    &.top .tooltip-arrow, &.top-left .tooltip-arrow, &.top-right .tooltip-arrow
+      border-top-color: #d9edf7
+    &.right .tooltip-arrow
+      border-right-color: #d9edf7
+    &.bottom .tooltip-arrow, &.bottom-left .tooltip-arrow, &.bottom-right .tooltip-arrow
+      border-bottom-color: #d9edf7
+    &.left .tooltip-arrow
+      border-left-color: #d9edf7
+    .tooltip-inner
+      background-color: #d9edf7
+      border-color: #bce8f1
+      color: #31708f
+      hr
+        border-top-color: #a6e1ec
+      .alert-link
+        color: #245269
+  &.tooltip-success
+    &.top .tooltip-arrow, &.top-left .tooltip-arrow, &.top-right .tooltip-arrow
+      border-top-color: #dff0d8
+    &.right .tooltip-arrow
+      border-right-color: #dff0d8
+    &.bottom .tooltip-arrow, &.bottom-left .tooltip-arrow, &.bottom-right .tooltip-arrow
+      border-bottom-color: #dff0d8
+    &.left .tooltip-arrow
+      border-left-color: #dff0d8
+    .tooltip-inner
+      background-color: #dff0d8
+      border-color: #d6e9c6
+      color: #3c763d
+      hr
+        border-top-color: #c9e2b3
+      .alert-link
+        color: #2b542c
+  &.tooltip-danger
+    &.top .tooltip-arrow, &.top-left .tooltip-arrow, &.top-right .tooltip-arrow
+      border-top-color: #f2dede
+    &.right .tooltip-arrow
+      border-right-color: #f2dede
+    &.bottom .tooltip-arrow, &.bottom-left .tooltip-arrow, &.bottom-right .tooltip-arrow
+      border-bottom-color: #f2dede
+    &.left .tooltip-arrow
+      border-left-color: #f2dede
+    .tooltip-inner
+      background-color: #f2dede
+      border-color: #ebccd1
+      color: #a94442
+      hr
+        border-top-color: #e4b9c0
+      .alert-link
+        color: #843534
+  &.top-left
+    margin-top: -3px
+    padding: 5px 0
+    .tooltip-arrow
+      bottom: 0
+      left: 50%
+      margin-left: -5px
+      border-width: 5px 5px 0
+      border-top-color: #000000
+      left: 10%
+  &.top-right
+    margin-top: -3px
+    padding: 5px 0
+    .tooltip-arrow
+      bottom: 0
+      left: 50%
+      margin-left: -5px
+      border-width: 5px 5px 0
+      border-top-color: #000000
+      left: 90%
+  &.bottom-left
+    margin-top: 3px
+    padding: 5px 0
+    .tooltip-arrow
+      top: 0
+      left: 50%
+      margin-left: -5px
+      border-width: 0 5px 5px
+      border-bottom-color: #000000
+      left: 10%
+  &.bottom-right
+    margin-top: 3px
+    padding: 5px 0
+    .tooltip-arrow
+      top: 0
+      left: 50%
+      margin-left: -5px
+      border-width: 0 5px 5px
+      border-bottom-color: #000000
+      left: 90%
+
+/*
+ * Tooltip corner placement
+ *
+ * Inherit exotic positionning from basic ones & fix arrow placement    

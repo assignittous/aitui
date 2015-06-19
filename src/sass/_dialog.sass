@@ -1,0 +1,111 @@
+.progress-dialog, .time-dialog
+  width: 300px
+  .aitu-navigation-check
+    font-size: 24px
+
+
+
+.green
+  color: $flat-nephritis
+
+
+.md-dialog-container
+  display: -webkit-flex
+  display: -ms-flexbox
+  display: flex
+  -webkit-justify-content: center
+  -ms-flex-pack: center
+  justify-content: center
+  -webkit-align-items: center
+  -ms-flex-align: center
+  align-items: center
+  position: fixed
+  left: 0
+  top: 0
+  right: 0
+  bottom: 0
+  z-index: 90
+
+
+md-dialog
+  opacity: 0
+  min-width: 240px
+  max-width: 100%
+  max-height: 100%
+  margin: auto
+  position: relative
+  box-shadow: 0px 27px 24px 0 rgba(0, 0, 0, 0.2)
+  display: -webkit-flex
+  display: -ms-flexbox
+  display: flex
+  -webkit-flex-direction: column
+  -ms-flex-direction: column
+  flex-direction: column
+  background: white
+  overflow-y: auto
+  md-content
+    -webkit-order: 1
+    -ms-flex-order: 1
+    order: 1
+    padding: 16px
+    overflow: auto
+    -webkit-overflow-scrolling: touch
+    *:first-child
+      margin-top: 0px
+    .form-container
+      padding: 0px
+      h1
+        font-family: aitu-bold
+        font-size: 18px
+        margin-bottom: 24px      
+      fieldset
+        margin: 0px
+        padding: 0px
+        border: 0px
+        field
+          margin-bottom: 12px
+          md-checkbox
+            margin: 0px
+    p
+      font-size: 16px
+
+
+  &.transition-in 
+    opacity: 1
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1)
+    -webkit-transform: translate3d(0, 0, 0) scale(1)
+    transform: translate3d(0, 0, 0) scale(1)
+  &.transition-out 
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1)
+    -webkit-transform: translate3d(0, 100%, 0) scale(0.2)
+    transform: translate3d(0, 100%, 0) scale(0.2)
+  .md-actions
+    display: -webkit-flex
+    display: -ms-flexbox
+    display: flex
+    -webkit-order: 2
+    -ms-flex-order: 2
+    order: 2
+    box-sizing: border-box
+    -webkit-align-items: center
+    -ms-flex-align: center
+    align-items: center
+    -webkit-justify-content: flex-end
+    -ms-flex-pack: end
+    justify-content: flex-end
+    padding: 0px 16px 16px 16px
+    min-height: 40px
+    > *
+      margin-left: 8px
+
+    button.md-button.md-default-theme
+      text-transform: none
+      color: white
+      font-size: 16px
+      background: $button-background
+      &.md-primary
+        background: $primary-button-background
+
+  &.md-content-overflow .md-actions
+    border-top: 1px solid
+

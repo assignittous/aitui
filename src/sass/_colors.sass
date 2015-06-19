@@ -1,0 +1,181 @@
+
+
+
+#filter-icon.active 
+  color: red
+
+
+
+// listview backgrounds
+
+.bg-good 
+  background: $flat-nephritis !important
+
+.bg-at-risk 
+  background: $flat-orange !important
+
+.bg-bad 
+  background: $flat-pomegranate !important
+
+.bg-neutral 
+  background: $flat-clouds !important
+
+
+
+// default
+a 
+  color: black
+
+
+.panel-group 
+  a 
+    color: $flat-asbestos
+    &:hover 
+      color: $flat-pumpkin
+    
+  
+
+
+// header and footer buttons
+a.button 
+  color: $white
+  &:hover 
+    color: $flat-pumpkin
+  
+
+
+
+a.tab, a.action, a.panel-button  
+  color: $flat-silver
+
+  
+
+a.tab.active 
+  color: $flat-midnight-blue
+
+.label.serial 
+  background: $flat-silver
+  color: $white
+  a 
+    color: $white
+  
+
+.is-billable 
+  color: $flat-silver
+
+
+span.serial.scope-change 
+  background: $flat-pomegranate
+  color: $white
+
+
+
+.ui-link.active 
+  color: $flat-pomegranate
+
+
+.in-progress 
+  color: $flat-peter-river // this color must be distinguisable from .completed
+
+.neutral 
+  color: $flat-asbestos
+
+// text colors
+.late, .bad, .alert 
+  color: $flat-pomegranate !important
+
+.completed, .good 
+  color: $flat-green-sea
+
+.at-risk 
+  color: $flat-orange
+
+
+
+// ## Folder Icons
+
+.folder-icon 
+  a, a > i 
+    color: gray
+  
+
+
+
+span.task-weight 
+
+  i 
+    color: $flat-clouds
+
+  
+  i.active 
+    color: $flat-asbestos
+  
+
+
+// background colors
+.bg.late 
+  background: $flat-pomegranate
+
+.bg.completed 
+  background: $flat-nephritis
+
+.bg.at-risk 
+  background: $flat-orange
+
+
+
+
+.highlight 
+  background: $flat-silver
+
+
+
+// ## Drag and Drop properties
+
+.drop-error 
+  background-color: $flat-light-pomegranate !important
+
+.drop-allowed 
+  background-color: $flat-light-emerald !important
+  color: blue
+
+
+
+// listview indents
+
+@for $level from 1 through 5 
+  .indent.level-##{$level}
+    background: darken(#ffffff, (6 - $level) * 10)
+  
+
+
+
+// # State
+
+// These styles are used for color indicators for items state
+
+.state.completed 
+  color: $flat-nephritis !important
+
+.state.completed-old 
+  color: $flat-silver !important
+
+
+.state.in-progress,
+.state.non-zero-count
+
+  color: $flat-belize-hole !important
+
+
+.state.not-started,
+.state.zero-count
+ 
+  color: $flat-silver !important
+
+
+.state.late,
+.state.alert,
+.state.has-recent-count
+
+  color: $flat-pomegranate !important
+
