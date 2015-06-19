@@ -1,0 +1,17 @@
+{
+  "name": "aitui",
+  "version": "0.1.0",
+  "homepage": "https://github.com/assignittous/aitui",
+  "authors": [
+    "Steven Ng <steven.ng@braintapper.com>"
+  ],
+  "description": "Assign It To Us Interface",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
