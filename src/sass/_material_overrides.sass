@@ -1,0 +1,71 @@
+// tabs
+
+
+
+md-content
+  min-height: 99% // this ensures that you can dismiss the panel when there is not a lot of content, and 99% ensures no vertical scrollbar appears
+
+
+md-tabs.md-default-theme .md-header
+  background: $header-background
+
+md-tabs.md-default-theme md-tab, md-tabs.md-default-theme md-tab.active
+  color: $header-foreground
+
+md-tabs.md-default-theme md-tabs-ink-bar
+  background-color: $flat-nephritis
+
+md-tooltip
+  background: black
+  color: white
+  opacity: 1
+// panel
+
+.md-button
+  font-size: 20px 
+
+md-sidenav
+  position: fixed
+  // fix height "jumpiness" when painting the sidenav
+  display: block !important
+
+  
+// radios and checkboxes
+md-checkbox.md-default-theme.md-checked .md-icon,
+md-radio-button.md-default-theme .md-on
+  background-color: $flat-green-sea
+md-radio-button.md-default-theme.md-checked .md-off
+  border-color: $flat-green-sea
+
+// buttons
+
+
+
+
+// listviews
+md-list
+  padding: 0px
+
+md-list.main md-item md-item-content
+  padding: 10px 0px
+
+// bottom sheets
+md-bottom-sheet
+  position: fixed
+  background: white
+//
+.md-dialog-container
+  top: 0px !important
+
+
+md-select-menu
+  md-content
+    background: white
+
+button.md-button.md-icon, .md-button:not(.md-fab) 
+  min-width: 18px
+  width: 100%
+
+
+md-backdrop
+  background-color: rgba(0, 0, 0, 0.25)

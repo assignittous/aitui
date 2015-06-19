@@ -1,0 +1,88 @@
+section#login
+  background: $flat-dark-asbestos
+  height: 100%
+  width: 100%
+  overflow-y: auto
+  text-align: center
+  #login-form
+    @include phone-only
+      height: 100%
+      width: 100%
+
+    @include at-least-tablet
+      height: 318px
+      width: 318px
+    form
+      //max-height: 318px
+      width: 240px
+      fieldset
+        border: 0px
+        padding: 0px
+        field
+          &.flash
+            color: white
+            font-size: 12px
+          display: block
+          margin: 0px
+          text-align: left
+          input[type=email]
+            margin-bottom: 8px
+          md-checkbox
+            margin: 15px 12px 0px 12px
+
+
+      field.login-button
+        padding-top: 12px
+
+        button.md-button.md-default-theme
+          font-size: 14px
+          letter-spacing: 1px
+          text-transform: none
+          padding: 10px 0px 12px 0px
+          color: white
+          background: $primary-button-background
+          // @include border-radius(3px)
+
+      input[type=text], input[type=email], input[type=password], button 
+        width: 100%
+
+      input[type=text], input[type=email], input[type=password]
+        padding: 10px 15px
+        border: 0px
+        @include border-radius(3px)
+
+
+
+
+      .md-icon 
+        border-color: white
+      .md-label
+        top: -2px
+        color: white
+      .logo
+        padding-bottom: 12px
+        i.aitu-logo
+          @include at-most-tablet
+            font-size: 64px
+            line-height: 64px          
+          font-size: 84px
+          line-height: 84px
+          color: white
+      h1
+        margin: 12px 0px
+        font-family: aitu-bold
+        font-size: 18px
+        text-transform: uppercase
+        color: white
+        letter-spacing: 2px
+
+    
+
+
+
+
+
+  
+
+
+

@@ -1,0 +1,203 @@
+
+[depth="2"]
+  flex-basis: 5px
+  border-left: 5px solid $flat-silver !important
+
+[depth="3"]
+  flex-basis: 10px
+  border-left: 10px solid darken($flat-silver,15%) !important
+
+[depth="4"]
+  flex-basis: 15px
+  border-left: 15px solid darken($flat-silver,30%) !important
+
+[depth="5"]
+  flex-basis: 20px
+  border-left: 20px solid darken($flat-silver,45%) !important
+
+[depth="6"]
+  flex-basis: 25px
+  border-left: 25px solid darken($flat-silver,60%) !important
+
+[depth="7"]
+  flex-basis: 30px
+  border-left: 30px solid darken($flat-silver,75%) !important
+
+[depth="8"]
+  flex-basis: 35px
+  border-left: 35px solid darken($flat-silver,90%) !important
+
+[depth="9"]
+  flex-basis: 40px
+  border-left: 40px solid black !important
+
+// main listview in app
+md-list.main
+  md-list-item
+    overflow: hidden
+    width: 100%
+    //height: 64px
+    display: block
+    border-bottom: 1px solid $flat-silver
+    &.collapsible //  use for hierarchical views
+      height: auto
+    md-item-content
+      &.droppable
+        background: $flat-dark-clouds
+      padding-top: 16px
+      padding-bottom: 16px       
+      &:nth-child(2)
+        padding-top: 0px
+        padding-bottom: 0px
+      &.expanded
+        border-bottom: 1px solid $flat-silver
+      &.child-container > md-list
+        md-item:last-child
+          border-bottom: 0px
+
+      & > div 
+           
+        .content.fixed
+          height: 64px
+
+      //& > div:first-child
+      //  .content
+      //    margin-left: 24px
+      //& > div:last-child
+      //  .content
+      //    margin-right: 24px
+      .lp20
+        padding-left: 20px
+      .icon, .avatar, .checkbox
+        min-width: 48px
+        width: 48px
+        flex-basis: 48px
+        font-size: 24px
+        md-checkbox
+          margin: 0px
+        a
+          @include no-hover-underline
+
+      .checkbox
+        .content
+          text-align: right
+          .md-label
+            display: none
+      .main
+        & > .content
+          padding-left: 24px
+          padding-right: 24px
+          .line-1
+            a.name, .name
+              font-family: aitu-bold
+              font-weight: normal
+              font-size: 16px
+
+          .line-2
+            font-size: 13px
+            & > .indicator
+              &.b
+                font-family: aitu-bold
+                font-weight: normal
+              i
+                top: 2px
+                position: relative
+                margin-left: 14px
+                font-size: 16px
+            & > a.indicator
+              @include no-hover-underline
+              &:hover
+                background: $flat-silver
+
+      .main, .icon, .avatar, .serial
+        margin: 0px
+        vertical-align: top
+        .content
+          
+          vertical-align: top
+          h1, h2
+            margin-bottom: 6px
+          h1
+            font-family: aitu-bold
+            font-weight: normal
+          h2, h3
+            font-family: aitu
+            font-weight: normal
+          h1
+            font-size: 16px
+          h2
+            color: $flat-dark-asbestos
+            font-size: 13px
+          h3
+            color: $flat-asbestos
+            font-size: 12px
+          textarea
+            width: 100%
+            border: 1px solid $flat-silver
+            padding: 3px 2px
+            font-family: aitu            
+          a.progress
+            padding-left: 18px
+            @include no-hover-underline
+
+          .indicator
+            padding-right: 8px
+      .serial, .avatar
+        .content
+          font-size: 14px
+          font-family: aitu-bold
+          color: $flat-asbestos
+          text-align: right
+          min-width: 48px
+          img
+            position: relative
+            top: -5px
+      .icon
+        .content
+          text-align: right
+          i
+            font-size: 24px
+      .main
+        width: 100%
+        i.aitu-av-stop
+          color: $flat-silver
+          &.completed
+            color: $flat-dark-asbestos
+      .checklist-item
+
+
+      div.radial
+        min-width: 48px
+        .content
+          margin-top: 12px
+          .stamp
+            min-width: 32px
+            text-align: center
+            padding: 3px
+            border-radius: 3px
+            
+            font-family: aitu-bold
+            font-size: 11px
+            color: white
+            &.normal
+              background: $flat-belize-hole
+            &.draft
+              @extend .normal
+            &.cancelled
+              background: $flat-silver
+            &.closed
+              background: $flat-concrete
+      div.avatar
+        min-width: 48px
+        multi-avatar
+          img
+            border-radius: 50%
+
+
+      button.icon-dark
+        color: black
+        font-size: 24px
+
+
+
+

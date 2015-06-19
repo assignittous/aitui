@@ -1,0 +1,959 @@
+label
+  input[type=checkbox]
+    margin-right: 10px
+
+
+.form-container
+  padding: 24px 5%
+  @include phone-only
+    padding: 24px 12px
+
+  h1, h2
+    font-family: aitu-bold  
+    margin-bottom: 12px
+    color: $flat-dark-asbestos
+  h1
+    font-size: 24px
+  h2
+    font-size: 18px  
+  
+  legend, aside, fieldset
+    margin-bottom: 24px
+
+  legend, aside
+    color: $flat-dark-asbestos  
+
+
+  button.md-button.md-default-theme
+    text-transform: none
+    color: white
+    font-size: 16px
+    background: $button-background
+    padding: 4px 10px
+    &.md-primary
+      background: $primary-button-background    
+    width: auto
+
+// .form-container is optional
+fieldset
+  border: 0px
+  // `field` tag is a made up tag but should resolve to a div
+  field
+    display: block
+    margin-bottom: 18px
+    &.after-checkbox
+      padding-top: 12px
+    &.toggle
+      margin-bottom: 8px
+    label
+      @include small-subheader
+      display: block
+      font-size: 10px        
+      margin-bottom: 6px
+      letter-spacing: 1px
+
+    label.checkbox, label.radio
+      font-family: aitu
+
+    input[type=text], input[type=password], textarea
+      &.ar
+        text-align: right
+      border: 0px
+      border-bottom: 1px solid $flat-silver
+      width: 100%
+      border-radius: 0px
+      padding: 3px 2px
+      font-family: aitu
+
+
+    input:focus, textarea:focus
+      border-bottom: 1px solid $flat-belize-hole
+
+    input[required]:focus
+      border-bottom: 1px solid $flat-pomegranate
+    input[required].ng-empty:not(:focus)
+      background: lighten($flat-sunflower,40%)
+
+    input.ng-mismatch
+      color: $flat-pomegranate !important
+
+    md-radio-group
+      md-radio-button
+        display: inline-block
+
+
+md-select
+  width: 100%    
+  margin: 0px
+  md-select-label.md-select-label
+    border-bottom: 1px solid $flat-silver    
+
+input
+  &[type="radio"][disabled], &[type="checkbox"][disabled], &[type="radio"].disabled, &[type="checkbox"].disabled
+    cursor: not-allowed
+
+fieldset[disabled] input
+  &[type="radio"], &[type="checkbox"]
+    cursor: not-allowed
+
+
+md-radio-group.horizontal
+  display: flex
+
+md-radio-button.weight
+  .md-container, .md-label
+    display: block
+    margin: 0px
+    text-align: center
+  .md-label
+    margin-top: 8px
+    font-size: 13px
+    font-weight: aitu-bold
+
+
+.switch-header
+  margin-top: 16px
+  height: 40px
+  .heading
+    width: 100%
+    font-family: aitu-bold
+    font-size: 22px
+    line-height: 40px
+    padding-left: 12px
+  .switch
+    width: 80px
+    min-width: 80px
+    md-switch
+      width: 80px
+  .heading, .switch
+    vertical-align: middle
+
+fieldset.health
+  padding-left: 92px
+
+@-webkit-keyframes checkbox-on
+  0%
+    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 15px 2px 0 11px
+  50%
+    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px 2px 0 11px
+  100%
+    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px
+
+
+@keyframes checkbox-on
+  0%
+    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 15px 2px 0 11px
+  50%
+    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px 2px 0 11px
+  100%
+    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px
+
+
+@-webkit-keyframes checkbox-off
+  0%, 25%
+    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px, 0 0 0 0 inset
+  50%
+    -webkit-transform: rotate(45deg)
+    transform: rotate(45deg)
+    margin-top: -4px
+    margin-left: 6px
+    width: 0px
+    height: 0px
+    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 15px 2px 0 11px, 0 0 0 0 inset
+  51%
+    -webkit-transform: rotate(0deg)
+    transform: rotate(0deg)
+    margin-top: -2px
+    margin-left: -2px
+    width: 20px
+    height: 20px
+    box-shadow: 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0px 0px 0 10px inset
+  100%
+    -webkit-transform: rotate(0deg)
+    transform: rotate(0deg)
+    margin-top: -2px
+    margin-left: -2px
+    width: 20px
+    height: 20px
+    box-shadow: 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0px 0px 0 0px inset
+
+
+@keyframes checkbox-off
+  0%, 25%
+    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 20px -12px 0 11px, 0 0 0 0 inset
+  50%
+    -webkit-transform: rotate(45deg)
+    transform: rotate(45deg)
+    margin-top: -4px
+    margin-left: 6px
+    width: 0px
+    height: 0px
+    box-shadow: 0 0 0 10px, 10px -10px 0 10px, 32px 0px 0 20px, 0px 32px 0 20px, -5px 5px 0 10px, 15px 2px 0 11px, 0 0 0 0 inset
+  51%
+    -webkit-transform: rotate(0deg)
+    transform: rotate(0deg)
+    margin-top: -2px
+    margin-left: -2px
+    width: 20px
+    height: 20px
+    box-shadow: 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0px 0px 0 10px inset
+  100%
+    -webkit-transform: rotate(0deg)
+    transform: rotate(0deg)
+    margin-top: -2px
+    margin-left: -2px
+    width: 20px
+    height: 20px
+    box-shadow: 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0 0 0 0, 0px 0px 0 0px inset
+
+
+.form-horizontal .radio
+  margin-bottom: 10px
+
+.radio
+  label
+    cursor: pointer
+    padding-left: 45px
+    position: relative
+    span
+      display: block
+      position: absolute
+      left: 10px
+      top: 2px
+      -webkit-transition-duration: 0.2s
+      transition-duration: 0.2s
+    .circle
+      border: 2px solid rgba(0, 0, 0, 0.84)
+      height: 15px
+      width: 15px
+      border-radius: 100%
+    .check
+      height: 15px
+      width: 15px
+      border-radius: 100%
+      background-color: rgba(0, 0, 0, 0.84)
+      -webkit-transform: scale(0)
+      -ms-transform: scale(0)
+      transform: scale(0)
+      &:after
+        display: block
+        position: absolute
+        content: ""
+        background-color: rgba(0, 0, 0, 0.84)
+        left: -18px
+        top: -18px
+        height: 50px
+        width: 50px
+        border-radius: 100%
+        z-index: 1
+        opacity: 0
+        margin: 0
+        -webkit-transform: scale(1.5)
+        -ms-transform: scale(1.5)
+        transform: scale(1.5)
+    input[type=radio]
+      &:not(:checked) ~ .check:after
+        -webkit-animation: rippleOff 500ms
+        animation: rippleOff 500ms
+      &:checked ~ .check:after
+        -webkit-animation: rippleOn 500ms
+        animation: rippleOn 500ms
+  input[type=radio]:checked ~ .check
+    background-color: rgba(0, 0, 0, 0.84)
+
+.radio-default input[type=radio]:checked ~ .check
+  background-color: rgba(0, 0, 0, 0.84)
+
+.radio-primary input[type=radio]:checked ~ .check
+  background-color: #4285f4
+
+.radio-success input[type=radio]:checked ~ .check
+  background-color: #0f9d58
+
+.radio-info input[type=radio]:checked ~ .check
+  background-color: #03a9f4
+
+.radio-warning input[type=radio]:checked ~ .check
+  background-color: #ff5722
+
+.radio-danger input[type=radio]:checked ~ .check, .radio-material-red input[type=radio]:checked ~ .check
+  background-color: #f44336
+
+.radio-material-pink input[type=radio]:checked ~ .check
+  background-color: #e91e63
+
+.radio-material-purple input[type=radio]:checked ~ .check
+  background-color: #9c27b0
+
+.radio-material-deeppurple input[type=radio]:checked ~ .check
+  background-color: #673ab7
+
+.radio-material-indigo input[type=radio]:checked ~ .check
+  background-color: #3f51b5
+
+.radio-material-lightblue input[type=radio]:checked ~ .check
+  background-color: #03a9f4
+
+.radio-material-cyan input[type=radio]:checked ~ .check
+  background-color: #00bcd4
+
+.radio-material-teal input[type=radio]:checked ~ .check
+  background-color: #009688
+
+.radio-material-lightgreen input[type=radio]:checked ~ .check
+  background-color: #8bc34a
+
+.radio-material-lime input[type=radio]:checked ~ .check
+  background-color: #cddc39
+
+.radio-material-lightyellow input[type=radio]:checked ~ .check
+  background-color: #ffeb3b
+
+.radio-material-orange input[type=radio]:checked ~ .check
+  background-color: #ff9800
+
+.radio-material-deeporange input[type=radio]:checked ~ .check
+  background-color: #ff5722
+
+.radio-material-grey input[type=radio]:checked ~ .check
+  background-color: #9e9e9e
+
+.radio-material-bluegrey input[type=radio]:checked ~ .check
+  background-color: #607d8b
+
+.radio-material-brown input[type=radio]:checked ~ .check
+  background-color: #795548
+
+.radio-material-lightgrey input[type=radio]:checked ~ .check
+  background-color: #ececec
+
+.radio input[type=radio]:checked ~ .circle, .radio-default input[type=radio]:checked ~ .circle
+  border-color: rgba(0, 0, 0, 0.84)
+
+.radio-primary input[type=radio]:checked ~ .circle
+  border-color: #4285f4
+
+.radio-success input[type=radio]:checked ~ .circle
+  border-color: #0f9d58
+
+.radio-info input[type=radio]:checked ~ .circle
+  border-color: #03a9f4
+
+.radio-warning input[type=radio]:checked ~ .circle
+  border-color: #ff5722
+
+.radio-danger input[type=radio]:checked ~ .circle, .radio-material-red input[type=radio]:checked ~ .circle
+  border-color: #f44336
+
+.radio-material-pink input[type=radio]:checked ~ .circle
+  border-color: #e91e63
+
+.radio-material-purple input[type=radio]:checked ~ .circle
+  border-color: #9c27b0
+
+.radio-material-deeppurple input[type=radio]:checked ~ .circle
+  border-color: #673ab7
+
+.radio-material-indigo input[type=radio]:checked ~ .circle
+  border-color: #3f51b5
+
+.radio-material-lightblue input[type=radio]:checked ~ .circle
+  border-color: #03a9f4
+
+.radio-material-cyan input[type=radio]:checked ~ .circle
+  border-color: #00bcd4
+
+.radio-material-teal input[type=radio]:checked ~ .circle
+  border-color: #009688
+
+.radio-material-lightgreen input[type=radio]:checked ~ .circle
+  border-color: #8bc34a
+
+.radio-material-lime input[type=radio]:checked ~ .circle
+  border-color: #cddc39
+
+.radio-material-lightyellow input[type=radio]:checked ~ .circle
+  border-color: #ffeb3b
+
+.radio-material-orange input[type=radio]:checked ~ .circle
+  border-color: #ff9800
+
+.radio-material-deeporange input[type=radio]:checked ~ .circle
+  border-color: #ff5722
+
+.radio-material-grey input[type=radio]:checked ~ .circle
+  border-color: #9e9e9e
+
+.radio-material-bluegrey input[type=radio]:checked ~ .circle
+  border-color: #607d8b
+
+.radio-material-brown input[type=radio]:checked ~ .circle
+  border-color: #795548
+
+.radio-material-lightgrey input[type=radio]:checked ~ .circle
+  border-color: #ececec
+
+.radio input[type=radio]
+  &[disabled] ~
+    .check, .circle
+      opacity: 0.5
+  display: none
+  &:checked ~ .check
+    -webkit-transform: scale(0.55)
+    -ms-transform: scale(0.55)
+    transform: scale(0.55)
+  &[disabled] ~
+    .circle
+      border-color: rgba(0, 0, 0, 0.84)
+    .check
+      background-color: rgba(0, 0, 0, 0.84)
+
+@-webkit-keyframes rippleOn
+  0%
+    opacity: 0
+  50%
+    opacity: 0.2
+  100%
+    opacity: 0
+
+
+@keyframes rippleOn
+  0%
+    opacity: 0
+  50%
+    opacity: 0.2
+  100%
+    opacity: 0
+
+
+@-webkit-keyframes rippleOff
+  0%
+    opacity: 0
+  50%
+    opacity: 0.2
+  100%
+    opacity: 0
+
+
+@keyframes rippleOff
+  0%
+    opacity: 0
+  50%
+    opacity: 0.2
+  100%
+    opacity: 0
+
+
+fieldset[disabled] .form-control, .form-control-wrapper .form-control, .form-control, fieldset[disabled] .form-control:focus, .form-control-wrapper .form-control:focus, .form-control:focus, fieldset[disabled] .form-control.focus, .form-control-wrapper .form-control.focus, .form-control.focus
+  padding: 0
+  float: none
+  border: 0
+  box-shadow: none
+  border-radius: 0
+  background: transparent
+  border-bottom: 1px solid #757575
+
+fieldset[disabled] .form-control:not(textarea):not(select), .form-control-wrapper .form-control:not(textarea):not(select), .form-control:not(textarea):not(select), fieldset[disabled] .form-control:focus:not(textarea):not(select), .form-control-wrapper .form-control:focus:not(textarea):not(select), .form-control:focus:not(textarea):not(select), fieldset[disabled] .form-control.focus:not(textarea):not(select), .form-control-wrapper .form-control.focus:not(textarea):not(select), .form-control.focus:not(textarea):not(select)
+  height: 28px
+
+fieldset[disabled] .form-control:disabled, .form-control-wrapper .form-control:disabled, .form-control:disabled, fieldset[disabled] .form-control:focus:disabled, .form-control-wrapper .form-control:focus:disabled, .form-control:focus:disabled, fieldset[disabled] .form-control.focus:disabled, .form-control-wrapper .form-control.focus:disabled, .form-control.focus:disabled
+  border-style: dashed
+
+select
+  &.form-control
+    height: 23px
+  &[multiple].form-control
+    height: 85px
+    &:focus, &.focus
+      height: 85px
+
+
+.form-control-wrapper
+  position: relative
+  /* active state
+  .form-control
+    &:focus, &.focus
+      outline: none
+  .floating-label
+    color: #7E7E7E
+    font-size: 14px
+    position: absolute
+    pointer-events: none
+    left: 0px
+    top: 5px
+    -webkit-transition: 0.2s ease all
+    transition: 0.2s ease all
+    opacity: 0
+  .form-control
+    &:not(.empty) ~ .floating-label
+      top: -10px
+      font-size: 10px
+      opacity: 1
+    &:focus:invalid ~ .floating-label, &.focus:invalid ~ .floating-label
+      color: #f44336
+    &:focus ~ .material-input:after, &.focus ~ .material-input:after
+      background-color: #5264ae
+    &:focus:invalid ~ .material-input:before, &.focus:invalid ~ .material-input:before, &:focus:invalid ~ .material-input:after, &.focus:invalid ~ .material-input:after
+      background-color: #f44336
+    &.empty ~ .floating-label
+      opacity: 1
+  .material-input:before
+    position: absolute
+    content: ""
+    width: 100%
+    left: 0
+    height: 2px
+    background-color: #5264ae
+    bottom: -1px
+    -webkit-transform: scaleX(0)
+    -ms-transform: scaleX(0)
+    transform: scaleX(0)
+    -webkit-transition: -webkit-transform 0s
+    transition: transform 0s
+  .form-control
+    &:focus ~ .material-input:before, &.focus ~ .material-input:before
+      -webkit-transform: scaleX(1)
+      -ms-transform: scaleX(1)
+      transform: scaleX(1)
+      -webkit-transition: -webkit-transform 0.2s ease-out
+      transition: transform 0.2s ease-out
+  .material-input:after
+    content: ""
+    position: absolute
+    height: 18px
+    width: 100px
+    margin-top: -1px
+    top: 7px
+    left: 0
+    pointer-events: none
+    opacity: 0.9
+    -webkit-transform-origin: left
+    -ms-transform-origin: left
+    transform-origin: left
+  .input-lg ~ .material-input:after
+    height: 26px
+  textarea
+    resize: none
+    ~ .form-control-highlight
+      margin-top: -11px
+  .form-control
+    &:focus ~ .material-input:after, &.focus ~ .material-input:after
+      -webkit-animation: input-highlight 0.3s ease
+      animation: input-highlight 0.3s ease
+      -webkit-animation-fill-mode: forwards
+      animation-fill-mode: forwards
+      opacity: 0
+  select ~ .material-input:after
+    display: none
+
+.form-group
+  &.has-warning
+    .material-input:before
+      background: #ff5722
+    input.form-control
+      &:focus ~ .material-input:after, &.focus ~ .material-input:after
+        background: #ff5722
+    .control-label, input.form-control:not(.empty) ~ .floating-label
+      color: #ff5722
+  &.has-error
+    .material-input:before
+      background: #f44336
+    input.form-control
+      &:focus ~ .material-input:after, &.focus ~ .material-input:after
+        background: #f44336
+    .control-label, input.form-control:not(.empty) ~ .floating-label
+      color: #f44336
+  &.has-success
+    .material-input:before
+      background: #0f9d58
+    input.form-control
+      &:focus ~ .material-input:after, &.focus ~ .material-input:after
+        background: #0f9d58
+    .control-label, input.form-control:not(.empty) ~ .floating-label
+      color: #0f9d58
+  &.has-info
+    .material-input:before
+      background: #03a9f4
+    input.form-control
+      &:focus ~ .material-input:after, &.focus ~ .material-input:after
+        background: #03a9f4
+    .control-label, input.form-control:not(.empty) ~ .floating-label
+      color: #03a9f4
+  .material-input:before
+    background-color: #3f51b5
+
+.form-group-default .material-input:before
+  background-color: #3f51b5
+
+.form-group-primary .material-input:before
+  background-color: #4285f4
+
+.form-group-success .material-input:before
+  background-color: #0f9d58
+
+.form-group-info .material-input:before
+  background-color: #03a9f4
+
+.form-group-warning .material-input:before
+  background-color: #ff5722
+
+.form-group-danger .material-input:before, .form-group-material-red .material-input:before
+  background-color: #f44336
+
+.form-group-material-pink .material-input:before
+  background-color: #e91e63
+
+.form-group-material-purple .material-input:before
+  background-color: #9c27b0
+
+.form-group-material-deeppurple .material-input:before
+  background-color: #673ab7
+
+.form-group-material-indigo .material-input:before
+  background-color: #3f51b5
+
+.form-group-material-lightblue .material-input:before
+  background-color: #03a9f4
+
+.form-group-material-cyan .material-input:before
+  background-color: #00bcd4
+
+.form-group-material-teal .material-input:before
+  background-color: #009688
+
+.form-group-material-lightgreen .material-input:before
+  background-color: #8bc34a
+
+.form-group-material-lime .material-input:before
+  background-color: #cddc39
+
+.form-group-material-lightyellow .material-input:before
+  background-color: #ffeb3b
+
+.form-group-material-orange .material-input:before
+  background-color: #ff9800
+
+.form-group-material-deeporange .material-input:before
+  background-color: #ff5722
+
+.form-group-material-grey .material-input:before
+  background-color: #9e9e9e
+
+.form-group-material-bluegrey .material-input:before
+  background-color: #607d8b
+
+.form-group-material-brown .material-input:before
+  background-color: #795548
+
+.form-group-material-lightgrey .material-input:before
+  background-color: #ececec
+
+.form-group input.form-control:focus ~ .material-input:after, .form-group-default input.form-control:focus ~ .material-input:after
+  background-color: #3f51b5
+
+.form-group-primary input.form-control:focus ~ .material-input:after
+  background-color: #4285f4
+
+.form-group-success input.form-control:focus ~ .material-input:after
+  background-color: #0f9d58
+
+.form-group-info input.form-control:focus ~ .material-input:after
+  background-color: #03a9f4
+
+.form-group-warning input.form-control:focus ~ .material-input:after
+  background-color: #ff5722
+
+.form-group-danger input.form-control:focus ~ .material-input:after, .form-group-material-red input.form-control:focus ~ .material-input:after
+  background-color: #f44336
+
+.form-group-material-pink input.form-control:focus ~ .material-input:after
+  background-color: #e91e63
+
+.form-group-material-purple input.form-control:focus ~ .material-input:after
+  background-color: #9c27b0
+
+.form-group-material-deeppurple input.form-control:focus ~ .material-input:after
+  background-color: #673ab7
+
+.form-group-material-indigo input.form-control:focus ~ .material-input:after
+  background-color: #3f51b5
+
+.form-group-material-lightblue input.form-control:focus ~ .material-input:after
+  background-color: #03a9f4
+
+.form-group-material-cyan input.form-control:focus ~ .material-input:after
+  background-color: #00bcd4
+
+.form-group-material-teal input.form-control:focus ~ .material-input:after
+  background-color: #009688
+
+.form-group-material-lightgreen input.form-control:focus ~ .material-input:after
+  background-color: #8bc34a
+
+.form-group-material-lime input.form-control:focus ~ .material-input:after
+  background-color: #cddc39
+
+.form-group-material-lightyellow input.form-control:focus ~ .material-input:after
+  background-color: #ffeb3b
+
+.form-group-material-orange input.form-control:focus ~ .material-input:after
+  background-color: #ff9800
+
+.form-group-material-deeporange input.form-control:focus ~ .material-input:after
+  background-color: #ff5722
+
+.form-group-material-grey input.form-control:focus ~ .material-input:after
+  background-color: #9e9e9e
+
+.form-group-material-bluegrey input.form-control:focus ~ .material-input:after
+  background-color: #607d8b
+
+.form-group-material-brown input.form-control:focus ~ .material-input:after
+  background-color: #795548
+
+.form-group-material-lightgrey input.form-control:focus ~ .material-input:after
+  background-color: #ececec
+
+.form-group input.form-control.focus ~ .material-input:after, .form-group-default input.form-control.focus ~ .material-input:after
+  background-color: #3f51b5
+
+.form-group-primary input.form-control.focus ~ .material-input:after
+  background-color: #4285f4
+
+.form-group-success input.form-control.focus ~ .material-input:after
+  background-color: #0f9d58
+
+.form-group-info input.form-control.focus ~ .material-input:after
+  background-color: #03a9f4
+
+.form-group-warning input.form-control.focus ~ .material-input:after
+  background-color: #ff5722
+
+.form-group-danger input.form-control.focus ~ .material-input:after, .form-group-material-red input.form-control.focus ~ .material-input:after
+  background-color: #f44336
+
+.form-group-material-pink input.form-control.focus ~ .material-input:after
+  background-color: #e91e63
+
+.form-group-material-purple input.form-control.focus ~ .material-input:after
+  background-color: #9c27b0
+
+.form-group-material-deeppurple input.form-control.focus ~ .material-input:after
+  background-color: #673ab7
+
+.form-group-material-indigo input.form-control.focus ~ .material-input:after
+  background-color: #3f51b5
+
+.form-group-material-lightblue input.form-control.focus ~ .material-input:after
+  background-color: #03a9f4
+
+.form-group-material-cyan input.form-control.focus ~ .material-input:after
+  background-color: #00bcd4
+
+.form-group-material-teal input.form-control.focus ~ .material-input:after
+  background-color: #009688
+
+.form-group-material-lightgreen input.form-control.focus ~ .material-input:after
+  background-color: #8bc34a
+
+.form-group-material-lime input.form-control.focus ~ .material-input:after
+  background-color: #cddc39
+
+.form-group-material-lightyellow input.form-control.focus ~ .material-input:after
+  background-color: #ffeb3b
+
+.form-group-material-orange input.form-control.focus ~ .material-input:after
+  background-color: #ff9800
+
+.form-group-material-deeporange input.form-control.focus ~ .material-input:after
+  background-color: #ff5722
+
+.form-group-material-grey input.form-control.focus ~ .material-input:after
+  background-color: #9e9e9e
+
+.form-group-material-bluegrey input.form-control.focus ~ .material-input:after
+  background-color: #607d8b
+
+.form-group-material-brown input.form-control.focus ~ .material-input:after
+  background-color: #795548
+
+.form-group-material-lightgrey input.form-control.focus ~ .material-input:after
+  background-color: #ececec
+
+.form-group .control-label, .form-group-default .control-label
+  color: rgba(0, 0, 0, 0.84)
+
+.form-group-primary .control-label
+  color: #4285f4
+
+.form-group-success .control-label
+  color: #0f9d58
+
+.form-group-info .control-label
+  color: #03a9f4
+
+.form-group-warning .control-label
+  color: #ff5722
+
+.form-group-danger .control-label, .form-group-material-red .control-label
+  color: #f44336
+
+.form-group-material-pink .control-label
+  color: #e91e63
+
+.form-group-material-purple .control-label
+  color: #9c27b0
+
+.form-group-material-deeppurple .control-label
+  color: #673ab7
+
+.form-group-material-indigo .control-label
+  color: #3f51b5
+
+.form-group-material-lightblue .control-label
+  color: #03a9f4
+
+.form-group-material-cyan .control-label
+  color: #00bcd4
+
+.form-group-material-teal .control-label
+  color: #009688
+
+.form-group-material-lightgreen .control-label
+  color: #8bc34a
+
+.form-group-material-lime .control-label
+  color: #cddc39
+
+.form-group-material-lightyellow .control-label
+  color: #ffeb3b
+
+.form-group-material-orange .control-label
+  color: #ff9800
+
+.form-group-material-deeporange .control-label
+  color: #ff5722
+
+.form-group-material-grey .control-label
+  color: #9e9e9e
+
+.form-group-material-bluegrey .control-label
+  color: #607d8b
+
+.form-group-material-brown .control-label
+  color: #795548
+
+.form-group-material-lightgrey .control-label
+  color: #ececec
+
+.form-group input.form-control:not(.empty) ~ .floating-label, .form-group-default input.form-control:not(.empty) ~ .floating-label
+  color: #3f51b5
+
+.form-group-primary input.form-control:not(.empty) ~ .floating-label
+  color: #4285f4
+
+.form-group-success input.form-control:not(.empty) ~ .floating-label
+  color: #0f9d58
+
+.form-group-info input.form-control:not(.empty) ~ .floating-label
+  color: #03a9f4
+
+.form-group-warning input.form-control:not(.empty) ~ .floating-label
+  color: #ff5722
+
+.form-group-danger input.form-control:not(.empty) ~ .floating-label, .form-group-material-red input.form-control:not(.empty) ~ .floating-label
+  color: #f44336
+
+.form-group-material-pink input.form-control:not(.empty) ~ .floating-label
+  color: #e91e63
+
+.form-group-material-purple input.form-control:not(.empty) ~ .floating-label
+  color: #9c27b0
+
+.form-group-material-deeppurple input.form-control:not(.empty) ~ .floating-label
+  color: #673ab7
+
+.form-group-material-indigo input.form-control:not(.empty) ~ .floating-label
+  color: #3f51b5
+
+.form-group-material-lightblue input.form-control:not(.empty) ~ .floating-label
+  color: #03a9f4
+
+.form-group-material-cyan input.form-control:not(.empty) ~ .floating-label
+  color: #00bcd4
+
+.form-group-material-teal input.form-control:not(.empty) ~ .floating-label
+  color: #009688
+
+.form-group-material-lightgreen input.form-control:not(.empty) ~ .floating-label
+  color: #8bc34a
+
+.form-group-material-lime input.form-control:not(.empty) ~ .floating-label
+  color: #cddc39
+
+.form-group-material-lightyellow input.form-control:not(.empty) ~ .floating-label
+  color: #ffeb3b
+
+.form-group-material-orange input.form-control:not(.empty) ~ .floating-label
+  color: #ff9800
+
+.form-group-material-deeporange input.form-control:not(.empty) ~ .floating-label
+  color: #ff5722
+
+.form-group-material-grey input.form-control:not(.empty) ~ .floating-label
+  color: #9e9e9e
+
+.form-group-material-bluegrey input.form-control:not(.empty) ~ .floating-label
+  color: #607d8b
+
+.form-group-material-brown input.form-control:not(.empty) ~ .floating-label
+  color: #795548
+
+.form-group-material-lightgrey input.form-control:not(.empty) ~ .floating-label
+  color: #ececec
+
+.input-group
+  .form-control-wrapper
+    margin-right: 5px
+    margin-left: 5px
+    bottom: -10px
+    .form-control
+      float: none
+  .input-group-addon
+    border: 0
+  .input-group-btn .btn
+    border-radius: 4px
+
+select.form-control
+  border: 0
+  box-shadow: none
+  border-bottom: 1px solid #757575
+  border-radius: 0
+  &:focus, &.focus
+    box-shadow: none
+    border-color: #757575
+
+@keyframes input-highlight
+  0%
+    left: 20%
+    -webkit-transform: scaleX(20%)
+    transform: scaleX(20%)
+  99%
+    -webkit-transform: scaleX(0)
+    transform: scaleX(0)
+    left: 0
+    opacity: 1
+  100%
+    opacity: 0
+
+
+.form-control-wrapper input[type=file]
+  opacity: 0
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  width: 100%
+  height: 100%
+  z-index: 100
