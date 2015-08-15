@@ -12,6 +12,6 @@ gulp = require('gulp-task-master')(taskMasterOptions)
 
 # gulp.task "watch",  ['compile-lib.watch','compile-bin.watch']
 
-gulp.task "default", []
+gulp.task "default", ["compile-jade","compile-coffee"]
 
 
