@@ -3,7 +3,7 @@ gulp   = require('gulp')
 concat = require('gulp-concat')
 plumber = require('gulp-plumber')
 jade = require('gulp-jade')
-logger = require('../logger').Logger
+logger = require('aitutils').aitutils.logger
 
 module.exports = ()->
   logger.info 'ASSET', "Compile core jadescripts"

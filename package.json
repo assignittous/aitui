@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/assignittous/aitui",
   "dependencies": {
+    "aitutils": "^0.1.14",
     "chalk": "^1.0.0",
     "coffee-script": "^1.9.3",
     "gulp": "^3.9.0",
