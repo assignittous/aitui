@@ -70,7 +70,7 @@
       "main": "compressed/showdown.js"
     },
     "angular-material": {
-      "main": "*min.js"
+      "main": ["*min.js","*css"]
     },
     "angular-loading-bar": {
       "main": "build/*.min.js"
