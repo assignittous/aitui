@@ -15,5 +15,65 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "angular": "~1.4.4",
+    "angular-material": "~0.10.1",
+    "angular-animate": "~1.4.4",
+    "angular-aria": "~1.4.4",
+    "angular-sanitize": "~1.4.4",
+    "angular-local-storage": "~0.2.2",
+    "sugar": "~1.4.1",
+    "angular-hotkeys": "~0.2.2",
+    "angular-route": "~1.4.4",
+    "angular-touch": "~1.4.4",
+    "angular-resource": "~1.4.4",
+    "angular-markdown-directive": "~0.3.1",
+    "showdown": "~1.2.2",
+    "angular-loading-bar": "~0.8.0"
+  },
+  "overrides": {
+    "angular": {
+      "main": "*min.js"
+    },
+    "angular-animate": {
+      "main": "*min.js"
+    },
+    "angular-aria": {
+      "main": "*min.js"
+    },
+    "angular-sanitize": {
+      "main": "*min.js"
+    },
+    "angular-local-storage": {
+      "main": "dist/*min.js"
+    },
+    "sugar": {
+      "main": "release/sugar-full.min.js"
+    },
+    "angular-hotkeys": {
+      "main": "build/*min.js"
+    },
+    "angular-route": {
+      "main": "*min.js"
+    },
+    "angular-touch": {
+      "main": "*min.js"
+    },
+    "angular-resource": {
+      "main": "*min.js"
+    },
+    "angular-markdown-directive": {
+      "main": "markdown.js"
+    },
+    "showdown": {
+      "main": "compressed/showdown.js"
+    },
+    "angular-material": {
+      "main": "*min.js"
+    },
+    "angular-loading-bar": {
+      "main": "build/*.min.js"
+    }
+  }
 }
