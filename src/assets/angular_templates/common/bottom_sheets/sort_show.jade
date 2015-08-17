@@ -1,0 +1,29 @@
+md-bottom-sheet.sort-show
+  div(layout="row" layout-sm="column")
+    md-content(flex="")
+      md-subheader Sort By
+      md-list
+        md-list-item(ng-repeat='item in sortAndShow.currentSortMenu')
+          md-item-content
+            md-button(md-no-ink="true" type="button", ng-click='sortAndShow.setSortKey(item.key)')
+              span.icon
+                span(ng-show="sortAndShow.getSortKey() == item.key")
+                  i.aitu-down-arrow(ng-show="sortAndShow.isReverse() == true")
+                  i.aitu-up-arrow(ng-show="sortAndShow.isReverse() != true")        
+                span(ng-show="sortAndShow.getSortKey() != item.key")
+                  | &nbsp;
+              span.label( ng-bind='item.text')
+    md-content(flex="")
+      md-subheader Show Only
+      md-list
+        md-list-item(role='presentation', ng-class='{divider: item.divider}', ng-repeat='item in sortAndShow.currentShowMenu')
+          md-item-content
+            md-button(md-no-ink="true" type="button", ng-click='sortAndShow.setShowKey(item.key)')
+              span.icon
+                span(ng-show="sortAndShow.showKey == item.key")
+                  i.aitu-navigation-check
+                span(ng-show="sortAndShow.showKey != item.key")
+                  | &nbsp;
+              span.label( ng-bind='item.text')
+
+

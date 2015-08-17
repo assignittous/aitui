@@ -1,0 +1,88 @@
+section
+  form.form-container(name="userform")
+    .hidden(ng-init="form.set(userform)")
+    div(ng-show="state.subcontext == 'new'")
+      fieldset
+        h2 Login Information
+
+        aside
+          p
+            | Please be sure to enter the e-mail address correctly for the user. If the e-mail address belongs to an existing Assign It To Me user, that user will have immediate access to your application once you add the user.
+          p
+            | If the user is not already an Assign It To Me user, that user will be sent an invitation to register.
+        field
+          label E-mail
+        
+          input(placeholder= "E-mail Address", type= "text", required= "true", ng-class="{'ng-empty': user.attributes.email == null}", ng-model="user.attributes.email")
+        field
+          label Confirm E-mail
+          
+          input(placeholder= "E-mail Address again", type= "text", required= "true", ng-class="{'ng-empty': user.attributes.email_confirmation == null, 'ng-mismatch': user.attributes.email != user.attributes.email_confirmation}", ng-model="user.attributes.email_confirmation")
+
+        field
+          md-button.md-flat.md-primary(ng-click="checkIdentity()") Check
+          input(ng-model="isUsableIdentity", required="true", type="hidden")
+
+
+    fieldset(ng-show="isAlreadyMember == true")
+      aside This user already exists in your application and cannot be added again.
+
+
+    div(ng-show="(isAlreadyMember == false) && (checked == true)")
+      aside(ng-show="(identity != null)") The person you are adding already exists in our system. More help text
+      aside(ng-show="(identity == null)") The person you are adding is new to our system. More help text.      
+      fieldset
+        h2 User Information
+        field
+          label First Name
+          input(type= "text", ng-model="user.attributes.first_name")
+        field
+          label Last Name
+          input(type= "text", ng-model="user.attributes.last_name")        
+        field
+          label E-mail
+          input(type= "text", ng-model="user.attributes.email")                
+        aside
+          | Users are responsible for keeping their own e-mail address up to date.
+
+    fieldset(ng-show="(isAlreadyMember == false) && (checked == true)")
+      h2 General Information
+      aside(ng-show="(identity != null)") The person you are adding already exists in our system. More help text
+      aside(ng-show="(identity == null)") The person you are adding is new to our system. More help text.
+      field
+        label Organization
+        
+        input(placeholder= "Organization", type= "text",  ng-options="organization for organization in organizations", ng-model="user.attributes.organization", required= "true", ng-class="{'ng-empty': user.attributes.organization == null}")
+      field
+        label Title
+        
+        input(placeholder= "Title", type= "text", ng-model="user.attributes.title")
+      field
+        label Description
+        textarea(msd-elastic="", ng-model="user.attributes.description")
+
+
+    fieldset(ng-show="(isAlreadyMember == false) && (checked == true)")
+      h2 User Attributes
+      field
+        md-checkbox(md-no-ink="true" aria-label= "This user is active and can log in", ng-model="user.attributes.is_active") This user is active and can log in
+      field
+        md-checkbox(md-no-ink="true" aria-label= "This user can manage projects", ng-model="user.attributes.is_project_manager") This user can manage projects
+      field
+        md-checkbox(md-no-ink="true" aria-label= "This user is an external user (i.e., vendor, client, etc.)", ng-model="user.is_external") This user is an external user (i.e., vendor, client, etc.)
+
+
+    fieldset(ng-show="(isAlreadyMember == false) && (checked == true)")
+      h2 Defaults
+      aside
+        | The default role and hourly rate will be automatically populated with the defaults below when this user is added to a project.
+      field
+        label Default Role
+        
+        input(placeholder= "Default Role", type= "text", required= "true", ng-class="{'ng-empty': user.attributes.default_role == null}", ng-model="user.attributes.default_role")
+      field
+        label Default Hourly Rate
+        
+        input(placeholder= "Default Rate", type= "text",required= "true", ng-class="{'ng-empty': user.attributes.default_rate == null}", ng-model="user.attributes.default_rate")
+
+

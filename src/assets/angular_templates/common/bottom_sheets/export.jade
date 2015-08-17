@@ -1,0 +1,22 @@
+md-bottom-sheet
+  .header.table
+    .cell.l
+      h2 Choose Export Format
+    .cell.r
+      a.cancel-button
+        | {href: '#', 'data-close': 'true','data-modal': 'export'}
+        | ×
+  .content
+    | { role: "main" }
+    ul
+      li.c
+        a.noop.nd {href:'','data-type':'csv', target:'_blank'} CSV
+      li.c
+        a.noop.nd {href:'','data-type':'xml', target:'_blank'} XML
+      li.c
+        a.noop.nd {href:'','data-type':'json', target:'_blank'} JSON
+  .footer.table
+    .cell.r
+      a.cancel-button
+        | {href: '#', 'data-close': 'true','data-modal': 'export'}
+        | Close

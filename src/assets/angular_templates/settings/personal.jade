@@ -1,0 +1,58 @@
+.form-container
+  section
+    h2 Personal Information
+    fieldset
+      field
+        label First Name
+        input(type="text", ng-model="identity.attributes.first_name")
+      field
+        label Last Name
+        input(type="text", ng-model="identity.attributes.last_name")
+      field
+        label E-mail
+        input(type="text", ng-model="identity.attributes.email")
+        span
+          | If you change your e-mail, you will need to remember to use the new e-mail for all subsequent logins
+      field
+        label Title
+        input(type="text", ng-model="identity.attributes.title")
+      field
+        label Organization
+        input(type="text", ng-model="identity.attributes.organization")
+      field
+        label Skype User Name
+        textarea(ng-model="identity.attributes.contact_information.skype")
+      field
+        label Slack User Name
+        textarea(ng-model="identity.attributes.contact_information.slack")                    
+      field
+        label Notes
+        textarea(ng-model="identity.attributes.description")
+      field
+        md-button.md-flat.md-primary("ng-click"='updatePersonalInfo()') Update Personal Information 
+  section
+    h2 Personal API Key
+    fieldset
+      field
+        label Personal API Key 
+        input(type="text", ng-model='user.api_token',  disabled='true')
+      field
+        md-button.md-flat.md-primary("ng-click"='user.resetApi()') Generate New API Key   
+  section
+    h2 Change Password
+    div
+      | It is strongly recommended that you use a password manager like 
+      a(href='https://agilebits.com/onepassword') 1Password 
+      | to generate and manage your passwords.
+    fieldset  
+      field
+        label Current Password
+        input(type="password", ng-model="oldPassword")
+      field
+        label New Password
+        input(type="password", ng-model="newPassword")
+      field
+        label New Password Again
+        input(type="password", ng-model="newPasswordConfirm")
+      field
+        md-button.md-flat.md-primary("ng-click"='updatePassword()') Change Password   

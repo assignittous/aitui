@@ -1,0 +1,5 @@
+md-item-content(depth="{{item.depth}}", ui-name="{{item.name}}", drag="item", ui-draggable="true", ui-droppable="{{(item.work_unit_type == 'folder')}}", drop-validate="dropValidate($data, item)", ui-on-drop="onDrop($data, item, $event)", ng-class="{expanded: (tree.showChildren(item.id) == true) && (item.work_unit_type == 'folder') }", drag-hover-class="droppable", ng-include="'common/task_list_item.html'")
+
+md-item-content(ng-class="{'child-container': item.work_unit_type == 'folder' }")
+  md-list.main(ng-show= "tree.showChildren(item.id)" )
+    md-list-item.collapsible(ng-repeat="item in project.childrenFor(item.id)| filter: filterText() | filter: showFilter | orderBy:sorter:isReverse() track by item.id", ng-include="'project/task_child.html'")

@@ -1,0 +1,10 @@
+section
+  article.timeline
+    md-list.main
+      md-list-item(ng-repeat= "item in timeline.items track by item.id")
+        md-item-content
+          .line-1
+            .main
+              .content
+                .h1(ng-bind="getDescription(item)")
+          .line-2 

@@ -1,0 +1,18 @@
+section(ng-controller="ProjectMemberController", ng-cloak)
+  md-list.main
+    md-list-item(ng-repeat="assignment in assignments.members")
+      md-item-content
+        .avatar
+          .content
+            multi-avatar(data-gravatar-id="{{assignment.avatar.hash}}", size="32")
+        .main
+          .content
+            .line-1
+              h1(ng-bind="assignment.first_name + ' ' + assignment.last_name")
+            .line-2
+              h2(ng-bind='assignment.role + " @ $" + assignment.hourly_rate + "/h" ')
+        .icon
+          .content
+            md-button.icon-dark(type="button", ng-click="moreMemberActions(assignment)", aria-label="label", md-no-ink="true")
+              i.aitu-navigation-more-vert
+              md-tooltip(md-direction="bottom left") More Actions

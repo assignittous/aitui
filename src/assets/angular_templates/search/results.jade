@@ -1,0 +1,18 @@
+section
+  md-list.main(ng-show='search.items.length > 0')
+    md-item(ng-repeat='result in search.items')
+      md-item-content
+        .icon
+          .content
+            .i.aitu-action-account-circle
+        .main      
+          .content
+            h1
+              a(href='#')
+                i.fa.fa-info        
+            h2
+              a(href="/#(@tenant_path)/#(result.searchable_type.pluralize)/#(result.searchable_id)", ng-bind="result.result_label") 
+            h3(ng-bind="result.content")
+
+  .blank-slate(ng-show='search.items.length == 0')
+    h1 There are currently no search results for your query.

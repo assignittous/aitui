@@ -1,0 +1,20 @@
+md-dialog(aria-label="Folder")
+  md-content
+    .form-container
+      h1 Member
+      fieldset
+        field
+          label User
+          md-select(ng-model="user_id", ng-change="refresh()", ng-show="!edit")
+            md-option(ng-repeat="user in userService.users", ng-value="user.id") {{ user.first_name }} {{ user.last_name}}
+          input(ng-model="user_name", type="text", ng-show="edit", disabled=true)
+        field
+          label Role
+          input(type="text", ng-model="role")
+        field
+          label Hourly Rate
+          input(type="text", ng-model="hourly_rate")
+
+  .md-actions
+    md-button.md-primary(ng-click="save()", md-no-ink="true") Save
+    md-button(ng-click="cancel()", md-no-ink="true") Cancel

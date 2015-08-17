@@ -1,0 +1,34 @@
+section
+  md-list.main
+    md-list-item("ng-repeat" = "project in projects.listItems | filter: filterText() | filter:showFilter  | orderBy: sorter:sortAndShow.isReverse() track by project.id" )
+      md-item-content
+        .icon
+          .content
+            i(ng-class="['icon-project-' + project.stage,'s24']")
+            md-tooltip(md-direction="bottom right")
+              p(ng-bind="project.stage")
+        .main
+          .content
+            .line-1
+              a.name(href="javascript:void(0)", "ng-bind"="project.name", "ng-click"="projectLink(project)")
+              
+              span.progress.at-least-tablet(ng-show="project.stage=='active'")
+                | &nbsp;
+                i.aitu-av-stop(ng-class="{completed: project.percent_complete > 0}")
+                i.aitu-av-stop(ng-class="{completed: project.percent_complete > 20}")
+                i.aitu-av-stop(ng-class="{completed: project.percent_complete > 40}")
+                i.aitu-av-stop(ng-class="{completed: project.percent_complete > 60}")
+                i.aitu-av-stop(ng-class="{completed: project.percent_complete > 80}")       
+                md-tooltip
+                  p {{ project.percent_complete }}% Complete
+            .line-2
+              span.indicator.b(ng-bind='project.organization')
+              span.stamp.normal(ng-show="project.is_billable", ng-bind="'billable'")
+        .icon.at-least-tablet
+          .content
+            md-button(md-no-ink="true" aria-label="More options", ng-click="showProjectListItemMenu(project)")
+              i.aitu-navigation-more-vert            
+              md-tooltip(md-direction="bottom left") More options
+
+  .blank-slate(ng-show="project.showBlankSlate == true")
+    h1 There are currently no projects.

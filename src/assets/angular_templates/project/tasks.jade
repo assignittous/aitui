@@ -1,0 +1,5 @@
+section
+  md-list.main
+    md-list-item.collapsible(ng-show="project.rootElements.length > 0", ng-repeat = "item in project.rootElements | filter: filterText() | filter: showFilter | orderBy:sorter:isReverse() track by item.id", ng-include="'project/task_child.html'")
+  .blank-slate(ng-show="project.showBlankSlate == true")
+    h1 This project currently has no tasks. 

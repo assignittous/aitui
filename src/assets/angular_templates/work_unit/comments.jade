@@ -1,0 +1,23 @@
+section
+  md-list.main
+
+    md-list-item("ng-repeat" = "item in comments.items track by item.id" , "ng-show"="comments.items.length > 0" )
+      md-item-content
+        .avatar
+          .content
+            multi-avatar(data-gravatar-id="{{item.user.avatar.hash}}", size="32")
+        .main
+          .content
+            .line-1
+              .markdown-block(btf-markdown="item.description",ng-bind="item.description", ng-show="item.is_editing != true")
+            .line-2
+              span.indicator.b(ng-bind="item.user.full_name + ', '")
+              span.indicator(ng-bind="relativeDate(item.created_at)")
+        .icon
+          .content
+            md-button.icon-dark(type="button", ng-click="moreCommentActions(item)", aria-label="label", md-no-ink="true")
+              i.aitu-navigation-more-vert
+              md-tooltip(md-direction="bottom left") More Actions                
+  .blank-slate(ng-show="comments.items.length == 0")
+    h1 There are currently no comments.
+

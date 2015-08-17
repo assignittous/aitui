@@ -1,0 +1,117 @@
+section
+  article.summary
+
+    section.print-header
+      
+      
+      h2 {{ workUnit.attributes.project.name }}
+      h1 {{ workUnit.attributes.name }}
+      h2 {{ workUnit.attributes.work_unit_type }}
+      h2 {{ workUnit.attributes.name_ancestry }} 
+      h3 Description
+      div {{ workUnit.attributes.description || "No description provided by the task creator."}}
+      h3 Tags
+      div {{ workUnit.attributes.tags }}
+      h3 Assigned To: {{ workUnit.attributes.assignment.first_name }} {{ workUnit.attributes.assignment.last_name }}
+
+    section
+      h1 Metrics
+
+      div
+        p {{ workUnit.attributes.percent_complete }}% complete
+        p last_percent_complete_update: {{ workUnit.attributes.last_percent_complete_update }}
+        p Progress Weighting: {{ workUnit.attributes.weight }}/5
+      .div
+        p percent complete history:
+        p {{ project.attributes.percent_complete_history }}
+      .grid
+        .row
+          .div Start Date
+          .div(ng-bind="startDate().start_date")
+          .div(ng-bind="startDate().status")
+          .div(ng-bind="startDate().variance")
+        .row
+          .div End Date
+          .div(ng-bind="endDate().end_date")
+          .div(ng-bind="endDate().status")
+          .div(ng-bind="endDate().variance")
+
+    section
+      h1 Effort
+
+        
+      | {{ workUnit.attributes.actual_baseline_effort | humanEffort }}
+      | {{ workUnit.attributes.scheduled_baseline_effort | humanEffort }}
+      | {{ workUnit.attributes.last_time_entry }}
+      br
+      | Adjustment
+      br
+      | {{ workUnit.attributes.actual_adjustment_effort | humanEffort }}
+      | {{ workUnit.attributes.scheduled_adjustment_effort | humanEffort }}
+
+      p 
+      p 
+    section
+      h1 Schedule
+      
+
+      | Planned Start
+      | {{ workUnit.attributes.scheduled_start }}
+      br
+      | Actual Start
+      | {{ workUnit.attributes.actual_start }}
+      br
+      | Planned End
+      | {{ workUnit.attributes.scheduled_start }}
+      br
+      | Actual End
+      | {{ workUnit.attributes.actual_start }}
+      br
+      | Forecast End
+      | goes here
+
+
+   
+
+
+    section
+      h1 Activity
+
+
+      h2 Checklist Items
+      p {{ workUnit.attributes.counter_checklist_done }} / {{ workUnit.attributes.counter_checklist }}
+      p Statused by checklist: {{ workUnit.attributes.is_statused_by_checklist }}
+      p last time entry: {{ workUnit.attributes.last_time_entry }}
+
+      h2 Time Entries
+      p {{ workUnit.attributes.actual_baseline_effort + workUnit.attrubtes.actual_adjustment_effort }} m
+      p of {{ workUnit.attributes.scheduled_baseline_effort + workUnit.attrubtes.scheduled_adjustment_effort }} m scheduled
+      p last time entry: {{ workUnit.attributes.last_time_entry }}
+
+      h2 Comments
+      p {{ workUnit.attributes.counter_comments }}
+      p Last comments added on: {{ workUnit.attributes.last_comment }}
+      h2 Attachments
+
+      p {{ workUnit.attributes.counter_attachments }}
+      p Last attachment added on: {{ workUnit.attributes.last_attachment }}
+
+
+
+    section
+      
+
+      
+
+      h2 Todo 
+      ul
+        li parent if applicable (use name ancestry)
+        li is billable
+        li is deleted
+        li created by user id
+        li updated by user id
+        li created at
+        li updated at
+
+
+

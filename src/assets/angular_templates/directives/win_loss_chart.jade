@@ -1,0 +1,8 @@
+table.win-loss(cellspacing=0)
+  tr
+    td(ng-repeat="item in data track by $index")
+      div.block(ng-class="winClass(item)")
+
+  tr
+    td(ng-repeat="item in data track by $index")
+      div.block(ng-class="lossClass(item)")

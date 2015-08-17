@@ -1,0 +1,14 @@
+h1.title Project Rate Sheet
+
+
+section
+
+  table
+    tr
+      th Role
+      th Person
+      th.r Hourly Rate
+    tr(ng-repeat="assignment in report.data.assignments")
+      td {{ assignment.first_name }} {{ assignment.last_name }}
+      td {{ assignment.role }}
+      td.r $ {{ assignment.hourly_rate }}/h

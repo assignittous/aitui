@@ -1,0 +1,24 @@
+section
+  md-list.main  
+    md-list-item(ng-repeat= "user in users.items | filter: filterText()   | orderBy: sorter:sortAndShow.isReverse() track by user.id" )
+      md-item-content
+
+        .avatar
+          .content
+            multi-avatar(data-gravatar-id="{{user.avatar.hash}}", size="32")        
+        .main
+          .content
+            .line-1
+              h1
+                a(href="users/{{user.id}}") {{ user.full_name }}
+            .line-2
+              h2(ng-bind='user.defaults.role + " @ $" + user.defaults.rate + "/h" ')
+       
+
+        .icon
+          .content
+            md-button.icon-dark(type="button", ng-click="moreUserActions(user)", aria-label="label", md-no-ink="true")
+              i.aitu-navigation-more-vert
+              md-tooltip(md-direction="bottom left") More Actions
+
+

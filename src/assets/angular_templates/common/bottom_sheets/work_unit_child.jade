@@ -1,0 +1,39 @@
+md-bottom-sheet
+  md-list(ng-show="model.work_unit_type == 'folder'")
+    md-list-item
+      md-item-content
+        md-button(md-no-ink="true" type="button", ng-click="editFolder(model)", aria-label="Edit Task")
+          | Edit
+    md-list-item
+      md-item-content
+        md-button(md-no-ink="true" type="button", ng-click="addChildTask()", aria-label="label")
+          | Add Child Task
+    md-list-item
+      md-item-content
+        md-button(md-no-ink="true" type="button", ng-click="addChildFolder(model)", aria-label="label")
+          | Add Child Folder
+    md-list-item
+      md-item-content
+        md-button(md-no-ink="true" type="button", ng-click="updateProgress(model)", aria-label="label")
+          | Delete
+  md-list(ng-show="model.work_unit_type != 'folder'")
+    md-list-item
+      md-item-content
+        md-button(md-no-ink="true" type="button", ng-click="editTask(model)", aria-label="Edit Task")
+          | Edit
+    md-list-item
+      md-item-content
+        md-button(md-no-ink="true" type="button", ng-click="addTime(model)", aria-label="label")
+          | Add Time
+    md-list-item(ng-show="model.is_statused_by_checklist == false")
+      md-item-content
+        md-button(md-no-ink="true" type="button", ng-click="updateProgress(model)", aria-label="label")
+          | Update Progress
+    md-list-item(ng-show="model.is_statused_by_checklist == true")
+      md-item-content
+        md-button(md-no-ink="true" type="button", ng-click="jumpToChecklist(model)", aria-label="label")
+          | Jump To Checklist
+    md-list-item
+      md-item-content
+        md-button(md-no-ink="true" type="button", ng-click="updateProgress(model)", aria-label="label")
+          | Delete

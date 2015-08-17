@@ -1,0 +1,51 @@
+section
+  .content-body
+    form.form-container(name="form")
+      fieldset
+        h2 General
+        field
+          label Project Name
+          input(placeholder = "Project Name", type = "text", ng-model="project.attributes.name", required= "", ng-class="{'ng-empty':  project.attributes.name == null}")
+        field
+          label Project Stage
+          md-radio-group(md-no-ink="true" ng-model="project.attributes.stage")
+            md-radio-button(value= "draft") Draft
+            md-radio-button(value= "active") Active
+            md-radio-button(value= "cancelled") Cancelled
+            md-radio-button(value= "closed") Closed
+    
+        field
+          label Project Code
+          input(placeholder = "Project Code", type = "text", ng-model="project.attributes.code")
+        field
+          label For
+          input(placeholder = "Client Organization", type = "text", "bs-typeahead"="", ng-options="organization for organization in organizations", ng-model="project.attributes.organization", required= "", ng-class="{'ng-empty': project.attributes.organization == null}")
+        field
+          label Description
+          textarea("msd-elastic"="", ng-model= "project.attributes.description")
+
+
+      fieldset
+        h2 Working Parameters
+        aside Note Projects do not have manually entered scheduled start dates, end dates or effort estimates. These are based on information defined in the project's tasks.            
+        field
+          label Hours Per Day
+          input#minutes_per_day(placeholder= "The normal number of hours billed per day", type= "text", required= "")
+
+
+
+      fieldset
+        h2 Task Defaults
+        field
+          md-checkbox(md-no-ink="true" aria-label= "Tasks are billable", ng-model="project.attributes.is_billable") Tasks are billable
+        field
+          md-checkbox(md-no-ink="true" aria-label= "Tasks are statused by checklist",  ng-model="project.attributes.is_statused_by_checklist") Tasks are statused by checklist
+        field.hidden
+          input(type="text", ng-model="project.attributes.is_billable")
+          input(type="text", ng-model="project.attributes.is_statused_by_checklist")
+
+
+      fieldset
+        h2 Health Settings
+
+      div(ng-include="'common/partials/health_settings.html'")

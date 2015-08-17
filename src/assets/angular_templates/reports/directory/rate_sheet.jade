@@ -1,0 +1,14 @@
+h1.title Rate Sheet
+
+
+section
+
+  table
+    tr
+      th Role
+      th Person
+      th.r Hourly Rate
+    tr(ng-repeat="user in report.data.users")
+      td {{ user.identity.first_name }} {{ user.identity.last_name }}
+      td {{ user.defaults.role }}
+      td.r $ {{ user.defaults.rate }}/h

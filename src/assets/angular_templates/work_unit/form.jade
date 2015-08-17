@@ -1,0 +1,48 @@
+section
+  .content-body.headerless
+    form.form-container(name="form")
+      fieldset
+        h2 General
+        field
+          label Task Name
+          input#name(placeholder= "Task Name", type=  "text", required= "", ng-model='workUnit.attributes.name', ng-class="{'ng-empty': workUnit.attributes.name == null}")
+
+        field
+          label Assigned To
+          select(ng-model='workUnit.attributes.assignment_id', required= "")
+            option(ng-repeat="assignment in project.attributes.assignments", value= "{{ assignment.id}}", ng-selected="assignment.id==workUnit.attributes.assignment_id", ng-bind="optionText(assignment)") 
+   
+
+        field
+          label Description
+          textarea("msd-elastic"="", ng-model='workUnit.attributes.description')
+
+
+      fieldset
+        h2 Schedule
+        field
+          label Scheduled Start
+          input(placeholder= "Scheduled Start", type="text",required= "", ng-model='workUnit.attributes.scheduled_start', ng-class="{'ng-empty': workUnit.attributes.scheduled_start == null}")
+        field
+          label Scheduled End
+          input(placeholder= "Scheduled End", type="text", name= "work_unit[scheduled_end]", required= "", ng-model='workUnit.attributes.scheduled_end', ng-class="{'ng-empty': workUnit.attributes.scheduled_end == null}")
+        field
+          label Effort
+          input(placeholder= "Effort", type=  "text", ng-model = 'displayEffort', ng-change="updateEffort(displayEffort)", ng-init= "displayEffort = initialEffort(work_unit)", required= "", ng-class="{'ng-empty': displayEffort == null}")    
+          span(ng-bind="displayEffort | humanEffort")
+
+      fieldset
+        h2 Task Attributes
+        field
+          md-checkbox(md-no-ink="true" ng-model="is_scope_change", ng-init="is_scope_change = (workUnit.attributes.work_unit_type == 'scope_change')" ) This task is a scope change
+
+        field
+          md-checkbox(md-no-ink="true" ng-model="workUnit.attributes.is_billable") This task is billable
+        field
+          md-checkbox(md-no-ink="true" ng-model="workUnit.attributes.is_statused_by_checklist") This task's percent complete is determined by its checklist
+
+
+        field.after-checkbox
+          label Weight
+          md-radio-group.horizontal(ng-model="workUnit.attributes.weight")
+            md-radio-button.weight(ng-repeat="weight in weights", ng-value="weight", aria-label="{{weight}}") {{ weight }}

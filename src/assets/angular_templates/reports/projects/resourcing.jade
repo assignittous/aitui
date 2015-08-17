@@ -1,0 +1,20 @@
+h1.title Project Resourcing
+
+section
+  div(ng-repeat= "project in report.data.projects | orderBy:project.name")
+    h1(ng-bind="project.name || 'Unnamed Project'")
+    table
+      thead
+        tr
+          th Person
+          th Role
+          th Rate
+          th Assigned Hours
+          th % of Project Hours
+      tbody
+        tr(ng-repeat= "assignment in project.assignments")
+          td {{ assignment.first_name }} {{ assignment.last_name }} 
+          td {{ assignment.role }} 
+          td ${{assignment.hourly_rate}}/h
+          td ####
+          td ####%

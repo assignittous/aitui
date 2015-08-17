@@ -1,0 +1,54 @@
+section
+  md-list.main(ng-show="projects.tree.length > 0")
+    md-list-item.collapsible(ng-repeat="project in projects.tree | orderBy:'name' track by project.id")
+      md-item-content(ng-class="{expanded: (tree.showChildren(project.id) == true) }")
+        .icon.at-least-tablet
+          .content
+            md-button.s24(ng-click="tree.toggle(project.id)", aria-label="Toggle Folder", md-no-ink="true", ng-class="{'icon-folder': (tree.showChildren(project.id) == false), 'icon-folder-open': (tree.showChildren(project.id) == true)}")
+              md-tooltip(md-direction="bottom right") Toggle Folder
+            
+        .main
+          .content
+            .line-1
+              a.icon.phone-only(ng-click="tree.toggle(project.id)", aria-label="Toggle Folder", md-no-ink="true")
+                i(ng-class="{'aitu-file-folder': (tree.showChildren(project.id) == false), 'aitu-folder-open': (tree.showChildren(project.id) == true)}")
+                &nbsp;
+              a.name.at-least-tablet(href="#/projects/{{project.id}}", "ng-bind"="project.name")
+              a.name.phone-only(ng-click="tree.toggle(project.id)", aria-label="Toggle Folder", md-no-ink="true", ng-bind="project.name")
+              a.progress.at-least-tablet
+                i.aitu-av-stop(ng-class="{completed: project.percent_complete > 0}")
+                i.aitu-av-stop(ng-class="{completed: project.percent_complete > 20}")
+                i.aitu-av-stop(ng-class="{completed: project.percent_complete > 40}")
+                i.aitu-av-stop(ng-class="{completed: project.percent_complete > 60}")
+                i.aitu-av-stop(ng-class="{completed: project.percent_complete > 80}")     
+                md-tooltip
+                  p {{ project.percent_complete }}% Complete
+                  p(ng-show="project.percent_complete > 0") Last Updated {{relativeDate(project.last_percent_complete_update)}}                               
+            .line-2
+              span.indicator.b(ng-bind='project.organization')
+              a.indicator.at-least-tablet
+                span Health Indicator Goes Here
+              a.progress.phone-only
+                i.aitu-av-stop(ng-class="{completed: project.percent_complete > 0}")
+                i.aitu-av-stop(ng-class="{completed: project.percent_complete > 20}")
+                i.aitu-av-stop(ng-class="{completed: project.percent_complete > 40}")
+                i.aitu-av-stop(ng-class="{completed: project.percent_complete > 60}")
+                i.aitu-av-stop(ng-class="{completed: project.percent_complete > 80}")     
+                md-tooltip
+                  p {{ project.percent_complete }}% Complete
+                  p(ng-show="project.percent_complete > 0") Last Updated {{relativeDate(project.last_percent_complete_update)}}                      
+            .line-3.phone-only
+              a.indicator
+                span Health Indicator Goes Here
+        .icon.phone-only
+          a.name(href="#/projects/{{project.id}}")
+            i.aitu-hardware-keyboard-arrow-right
+
+      md-item-content.child-container
+        md-list.main(ng-show= "tree.showChildren(project.id)")
+          md-list-item(depth="2", data-role="list-row", ng-repeat= "item in project.work_units| filter: filterText() | filter: showFilter | orderBy:sorter:isReverse() track by item.id", id="task-{{item.id}}")
+            md-item-content(ng-include="'common/task_list_item.html'")
+
+                    
+  .blank-slate(ng-show="projects.showBlankSlate == true")
+    h1 You are not assigned to any active projects right now.

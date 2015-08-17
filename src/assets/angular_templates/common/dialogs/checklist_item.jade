@@ -1,0 +1,15 @@
+md-dialog(aria-label="Folder")
+  md-content
+    .form-container
+      h1 Checklist Item
+      fieldset
+        field
+          label User
+          input(ng-model="user_name", type="text", disabled=true)
+        field
+          label Description
+          textarea(ng-model="description")
+
+  .md-actions
+    md-button.md-primary(ng-click="save()", md-no-ink="true") Save
+    md-button(ng-click="cancel()", md-no-ink="true") Cancel

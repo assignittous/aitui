@@ -1,0 +1,40 @@
+md-dialog.sort-show
+  md-content
+    .form-container
+      fieldset
+        field
+          label Filter
+          input(placeholder = "Keywords", type = "text", "ng-change"="sortAndShow.setFilter(filterInput)", "ng-model"="filterInput")
+    div(layout="row" layout-sm="column")
+      div
+        md-subheader.first.md-no-sticky Sort By
+        md-list
+          md-list-item(ng-repeat='item in sortAndShow.currentSortMenu')
+            md-item-content
+              md-button(type="button", ng-click='sortAndShow.setSortKey(item.key)', md-no-ink="true")
+                span.icon
+                  span(ng-show="sortAndShow.getSortKey() == item.key")
+                    i.aitu-down-arrow(ng-show="sortAndShow.isReverse() == true")
+                    i.aitu-up-arrow(ng-show="sortAndShow.isReverse() != true")        
+                  span(ng-show="sortAndShow.getSortKey() != item.key")
+                    | &nbsp;
+                span.label( ng-bind='item.text')
+      div
+        md-subheader.md-no-sticky Show Only
+        md-list
+          md-list-item(role='presentation', ng-class='{divider: item.divider}', ng-repeat='item in sortAndShow.currentShowMenu')
+            md-item-content
+              md-button(type="button", ng-click='sortAndShow.setShowKey(item.key)', md-no-ink="true")
+                span.icon
+                  span(ng-show="sortAndShow.getShowKey() == item.key")
+                    i.aitu-navigation-check
+                  span(ng-show="sortAndShow.getShowKey() != item.key")
+                    | &nbsp;
+                span.label( ng-bind='item.text')
+
+
+
+
+  .md-actions
+    md-button.md-primary(ng-click="cancelSortShow()", md-no-ink="true") Done
+

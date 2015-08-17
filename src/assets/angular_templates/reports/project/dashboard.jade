@@ -1,0 +1,177 @@
+h1.title Project Dashboard
+
+section
+  article.summary
+    
+
+
+    section
+      h1 {{ project.attributes.name }}
+      h2 {{ project.attributes.code }}
+      h2 {{ project.attributes.organization }}
+      h2 {{ project.attributes.stage }}
+
+      ul
+        
+        li is billable
+        li is deleted
+        li created by user id
+        li updated by user id
+        li created at
+        li updated at
+
+
+      h1 Project Health
+      .health-criteria
+        .criterion
+          h2 Percent Complete
+          h3.de-emphasized {{project.main.health_settings.percent_complete.importance.capitalize()}}
+
+                    radial-progress(size='180', stroke-width= '20', progress="project.metrics().percent_complete", color="{{project.main.percent_complete_score}}")
+        .criterion
+          h2 Effort
+          h3.de-emphasized {{project.main.health_settings.effort.importance.capitalize()}}
+
+          radial-progress(size='180', stroke-width= '20', progress="project.metrics().percent_burn", color="{{project.main.effort_score}}")
+        .criterion
+          h2 Scope
+          h3.de-emphasized {{project.main.health_settings.scope.importance.capitalize()}}
+       
+          radial-progress(size='180', stroke-width= '20', progress="project.metrics().percent_scope_change", color="{{project.main.scope_score}}")  
+        .criterion
+          h2 Billing
+          h3.de-emphasized {{project.main.health_settings.billing.importance.capitalize()}}
+          
+          radial-progress(size='180', stroke-width= '20', progress="project.metrics().percent_complete", color="{{project.main.billing_score}}")
+        .criterion
+          h2 Flags
+          h3.de-emphasized {{project.main.health_settings.flags.importance.capitalize()}}
+          radial-indicator(size='180', stroke-width= '20', value="0")  
+
+    section
+
+      h1 Metrics
+
+      .div
+        | {{ project.attributes.percent_complete }} % Done
+
+
+      .grid
+        .row
+          .div Start Date
+          .div(ng-bind="startDate().start_date")
+          .div(ng-bind="startDate().status")
+          .div(ng-bind="startDate().variance")
+        .row
+          .div End Date
+          .div(ng-bind="endDate().end_date")
+          .div(ng-bind="endDate().status")
+          .div(ng-bind="endDate().variance")
+    section
+      ul
+
+
+
+        li scheduled baseline effort
+        li scheduled billable value
+        li scheduled adjustment effort
+
+        li actual bilalble value
+        li actual baseline3 effort
+        li actual adjustment effort
+
+        li health settings
+        li progress curve
+
+
+        li flags    
+    section
+      .layout
+        .layout-cell
+
+          h1 Effort
+          .grid
+            .group
+              .metric.col.span_2_of_6
+                .metric-value {{ project.metrics().scheduled_baseline_effort | humanEffort : {abbreviate: true} }}
+                .metric-label Baseline Effort
+              .metric.col.span_2_of_6
+                .metric-value {{ project.metrics().scheduled_adjustment_effort | humanEffort: {abbreviate: true} }}
+                .metric-label Scope Changes
+              .metric.col.span_2_of_6
+                .metric-value {{ project.metrics().scheduled_total_effort | humanEffort: {abbreviate: true} }} 
+                .metric-label Total Effort
+        .layout-cell
+          h1 heading
+          .grid
+            .group
+              .metric.col.span_2_of_6
+                .metric-value {{ project.metrics().scheduled_total_effort | humanEffort: {abbreviate: true} }}
+                .metric-label Total Scheduled
+              .metric.col.span_2_of_6
+                .metric-value {{ project.metrics().scheduled_total_effort - project.metrics().actual_baseline_effort - project.metrics().actual_adjustment_effort | humanEffort : {abbreviate: true} }}          
+                .metric-label Remaining
+              .metric.col.span_2_of_6
+                .metric-value {{ project.metrics().actual_baseline_effort | humanEffort: {abbreviate: true} }} 
+                .metric-label Baseline Burned
+      div
+
+        .ib.halfwrap
+          h3 Scope Change Burned
+          h1 {{ project.metrics().actual_adjustment_effort | humanEffort: {abbreviate: true} }}
+
+
+      .layout
+        .layout-cell
+
+
+          h2 Baseline Tasks
+
+          .grid
+            .group
+              .metric.col.span_2_of_6
+                .metric-value {{ project.metrics().tasks }}
+                .metric-label Total
+              .metric.col.span_2_of_6
+                .metric-value {{ project.metrics().tasks_completed }}
+                .metric-label Completed
+              .metric.col.span_2_of_6
+                .metric-value {{ project.metrics().tasks -  project.metrics().tasks_completed }}
+                .metric-label Remaining
+
+        .layout-cell
+
+
+
+
+          h1 Scope Changes
+          .grid
+            .group
+              .metric.col.span_2_of_6
+                .metric-value {{ project.metrics().scope_changes }}
+                .metric-label Total
+              .metric.col.span_2_of_6
+                .metric-value {{ project.metrics().scope_changes_completed }}      
+                .metric-label Completed
+              .metric.col.span_2_of_6
+                .metric-value {{ project.metrics().scope_changes -  project.metrics().scope_changes_completed }}
+                .metric-label Remaining
+
+
+    section
+      h1 Schedule
+
+      h2.de-emphasized Business Days
+
+      .grid
+        .group
+          .metric.col.span_2_of_6
+            .metric-value {{ project.metrics().scheduled_working_days }}
+            .metric-label Scheduled
+          .metric.col.span_2_of_6
+            .metric-value {{ project.metrics().elapsed_working_days }}    
+            .metric-label Elapsed
+          .metric.col.span_2_of_6
+            .metric-value {{ project.metrics().remaining_working_days }}
+            .metric-label Remaining
+

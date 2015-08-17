@@ -1,0 +1,13 @@
+.bullet-chart(ng-model="model")
+  .measure(ng-style="measure_style(model.measure)")
+  .ranges(style="height: {{height}}px")
+    .green(ng-style="pre_threshold_style(model.threshold_yellow)")
+    .yellow(ng-style="yellow_style(model.threshold_yellow, model.threshold_red)")
+    .red(ng-style="red_style(model.threshold_red)")
+
+
+  .ticks
+    div(ng-repeat="tick in ticks", ng-style="tick_style(tick, $index)") &nbsp;
+  .labels
+    div(ng-repeat="label in labels", ng-style="tick_style(label, $index)", ng-bind="label + suffix")
+  

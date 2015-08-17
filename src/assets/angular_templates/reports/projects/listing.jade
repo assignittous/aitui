@@ -1,0 +1,22 @@
+h1.title Projects Listing
+
+section
+  table
+    thead
+      tr
+        th Stage
+        th Progress
+        th Project Name
+        th Client
+        th Owner
+        th Start
+        th End
+    tbody
+      tr(ng-repeat= "project in report.data.projects | orderBy:project.name")
+        td(ng-bind="project.stage")
+        td.r(ng-bind="project.percent_complete + '%'")
+        td {{ project.name }}
+        td {{ project.organization }}
+        td {{ project.user_id }}
+        td {{ project.scheduled_start }}
+        td {{ project.scheduled_end }}

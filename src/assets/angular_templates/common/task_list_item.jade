@@ -1,0 +1,67 @@
+
+.serial.at-least-tablet(ng-show="item.work_unit_type != 'folder'")
+  .content
+    span.badge(ng-bind="item.serial")       
+.icon.at-least-tablet(ng-show="(item.work_unit_type == 'folder')")
+  .content
+    md-button.icon-dark(ng-click= "tree.toggle(item.id)", aria-label="Toggle Folder", md-no-ink="true")
+      i.s24(ng-class= "workUnitStatusService.iconClass(item, tree.showChildren(item.id))")
+      md-tooltip(md-direction="bottom right") Toggle Folder              
+.main
+  .content
+    .line-1
+      a.phone-only(ng-click= "tree.toggle(item.id)", ng-show="item.work_unit_type == 'folder'")
+        i.s24(ng-class= "workUnitStatusService.iconClass(item, tree.showChildren(item.id))") &nbsp;
+      a.name(href="#/work_units/{{item.id}}", "ng-bind"="item.name", ng-show="item.work_unit_type != 'folder'")
+      a.name("ng-bind"="item.name", ng-show="item.work_unit_type == 'folder'", ng-click= "tree.toggle(item.id)", aria-label="Toggle Folder", md-no-ink="true")
+      a.progress.at-least-tablet(ng-click="updateProgress(item)")
+        i.aitu-av-stop(ng-class="{completed: item.percent_complete > 0}")
+        i.aitu-av-stop(ng-class="{completed: item.percent_complete > 20}")
+        i.aitu-av-stop(ng-class="{completed: item.percent_complete > 40}")
+        i.aitu-av-stop(ng-class="{completed: item.percent_complete > 60}")
+        i.aitu-av-stop(ng-class="{completed: item.percent_complete > 80}")  
+        md-tooltip
+          p {{ item.percent_complete }}% Complete
+          p(ng-show="item.work_unit_type != 'folder'") Weight: {{ item.weight }}/5
+          p(ng-show="item.percent_complete > 0") Last Updated {{relativeDate(item.last_percent_complete_update)}}
+          p(ng-show="item.is_statused_by_checklist") This task is statused by checklist.
+      span {{ item.last_comment }}
+    .line-2
+      span.indicator.b(ng-bind="[item.assignment.first_name, item.assignment.last_name].join(' ')", ng-show="item.work_unit_type != 'folder'")
+      span.indicator.at-least-tablet(ng-show="item.scheduled_end != null && item.scheduled_end !== undefined")
+        | Due: {{relativeDate(item.scheduled_end)}}
+      a.progress.phone-only(ng-click="updateProgress(item)")
+        i.aitu-av-stop(ng-class="{completed: item.percent_complete > 0}")
+        i.aitu-av-stop(ng-class="{completed: item.percent_complete > 20}")
+        i.aitu-av-stop(ng-class="{completed: item.percent_complete > 40}")
+        i.aitu-av-stop(ng-class="{completed: item.percent_complete > 60}")
+        i.aitu-av-stop(ng-class="{completed: item.percent_complete > 80}")          
+      a.indicator.at-least-tablet(ng-show="item.counter_time_entries > 0", ng-href="#/work_units/{{item.id}}/time")
+        i.icon-time.s16           
+          md-tooltip 
+            p {{ item.actual_baseline_effort + item.actual_adjustment_effort }} of {{ item.scheduled_baseline_effort + item.scheduled_adjustment_effort }}h used
+            p Last time entry added {{ relativeDate(item.last_time_entry) }}
+
+      a.indicator.at-least-tablet(ng-show="item.counter_checklist > 0", ng-href="#/work_units/{{item.id}}/checklist")
+        i.icon-checkmark.s16                              
+        md-tooltip 
+          p {{ item.counter.checklist_done || 0 }} of {{ item.counter_checklist }} complete
+          p(ng-show="item.is_statused_by_checklist") This task is statused by checklist.
+      a.indicator.at-least-tablet(ng-show="item.counter_comments > 0", ng-href="#/work_units/{{item.id}}/comments")
+        i.icon-comment.s16     
+        md-tooltip 
+          p {{ item.counter_comments }} comments
+          p Last comment {{ relativeDate(item.last_commented_at) }}        
+      a.indicator.at-least-tablet(ng-show="item.counter_attachments > 0", ng-href="#/work_units/{{item.id}}/files")
+        i.icon-cloud.s16
+        md-tooltip 
+          p {{ item.counter_attachments }} attachments
+          p Last attachment {{ relativeDate(item.last_attachment) }}
+    .line-3.phone-only
+      span.indicator(ng-show="item.scheduled_end != null && item.scheduled_end !== undefined")
+        | Due: {{relativeDate(item.scheduled_end)}}      
+.icon
+  .content
+    md-button.icon-dark(type="button", ng-click="moreActions(item)", aria-label="label", md-no-ink="true")
+      i.icon-more.s24
+      md-tooltip(md-direction="bottom left") More Actions

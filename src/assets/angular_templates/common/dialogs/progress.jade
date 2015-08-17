@@ -1,0 +1,12 @@
+md-dialog.md-default-theme(aria-label="Update Progress")
+  md-content
+    
+    .form-container
+      h1 Task Progress
+      fieldset
+        field
+          label Percent Complete
+          input.numeric(type="text", ng-model="percent_complete")
+  .md-actions
+    md-button.md-primary(ng-click="save()", md-no-ink="true") Save
+    md-button(ng-click="cancel()", md-no-ink="true") Cancel

@@ -1,0 +1,193 @@
+section
+  article.summary
+    md-content
+
+
+      section
+        h1 {{ project.attributes.name }}
+        h2 {{ project.attributes.code }}
+        h2 {{ project.attributes.organization }}
+        h2 {{ project.attributes.stage }}
+        h3 Description
+        div {{ project.attributes.description || "No description provided by the project creator."}}
+        h3 Tags
+        div {{ project.attributes.tags }}
+        ul
+          
+          li is billable
+          li is deleted
+          li created by user id
+          li updated by user id
+          li created at
+          li updated at
+
+
+        h1 Project Health
+        .health-criteria
+          .criterion
+            h2 Percent Complete
+            h3.de-emphasized {{project.main.health_settings.percent_complete.importance.capitalize()}}
+
+                      radial-progress(size='180', stroke-width= '20', progress="project.metrics().percent_complete", color="{{project.main.percent_complete_score}}")
+          .criterion
+            h2 Effort
+            h3.de-emphasized {{project.main.health_settings.effort.importance.capitalize()}}
+
+            radial-progress(size='180', stroke-width= '20', progress="project.metrics().percent_burn", color="{{project.main.effort_score}}")
+          .criterion
+            h2 Scope
+            h3.de-emphasized {{project.main.health_settings.scope.importance.capitalize()}}
+         
+            radial-progress(size='180', stroke-width= '20', progress="project.metrics().percent_scope_change", color="{{project.main.scope_score}}")  
+          .criterion
+            h2 Billing
+            h3.de-emphasized {{project.main.health_settings.billing.importance.capitalize()}}
+            
+            radial-progress(size='180', stroke-width= '20', progress="project.metrics().percent_complete", color="{{project.main.billing_score}}")
+          .criterion
+            h2 Flags
+            h3.de-emphasized {{project.main.health_settings.flags.importance.capitalize()}}
+            radial-indicator(size='180', stroke-width= '20', value="0")  
+
+      section
+
+        h1 Metrics
+
+        .div
+          | {{ project.attributes.percent_complete }} % Done
+
+        .div
+          | percent complete history:
+          | {{ project.attributes.percent_complete_history }}
+
+        .grid
+          .row
+            .div Start Date
+            .div(ng-bind="startDate().start_date")
+            .div(ng-bind="startDate().status")
+            .div(ng-bind="startDate().variance")
+          .row
+            .div End Date
+            .div(ng-bind="endDate().end_date")
+            .div(ng-bind="endDate().status")
+            .div(ng-bind="endDate().variance")
+      section
+        ul
+
+
+
+          li scheduled baseline effort
+          li scheduled billable value
+          li scheduled adjustment effort
+
+          li actual bilalble value
+          li actual baseline3 effort
+          li actual adjustment effort
+
+          li health settings
+          li progress curve
+
+
+          li flags    
+      section
+        h1 Effort
+        div
+          .ib.third
+            h3 Baseline Effort
+            h1 {{ project.metrics().scheduled_baseline_effort | humanEffort : {abbreviate: true} }}
+          .ib.third
+            h3 Scope Changes
+            h1 {{ project.metrics().scheduled_adjustment_effort | humanEffort: {abbreviate: true} }}
+          .ib.third
+            h3 Total Effort
+            h1 {{ project.metrics().scheduled_total_effort | humanEffort: {abbreviate: true} }} 
+
+        div
+          .ib.halfwrap
+            h3 Total Scheduled
+            h1 {{ project.metrics().scheduled_total_effort | humanEffort: {abbreviate: true} }}
+          .ib.halfwrap
+            h3 Remaining
+            h1 {{ project.metrics().scheduled_total_effort - project.metrics().actual_baseline_effort - project.metrics().actual_adjustment_effort | humanEffort : {abbreviate: true} }}          
+          .ib.halfwrap
+            h3 Baseline Burned
+            h1 {{ project.metrics().actual_baseline_effort | humanEffort: {abbreviate: true} }}            
+          .ib.halfwrap
+            h3 Scope Change Burned
+            h1 {{ project.metrics().actual_adjustment_effort | humanEffort: {abbreviate: true} }}
+
+        h1 Scope Changes
+
+
+        div
+          .ib.third
+            h3 Total 
+            h1 {{ project.metrics().scope_changes }}
+          .ib.third
+            h3 Completed
+            h1 {{ project.metrics().scope_changes_completed }}
+          .ib.third
+            h3 Remaining
+            h1 {{ project.metrics().scope_changes -  project.metrics().scope_changes_completed }}
+      
+
+
+      section
+        h1 Schedule
+
+        h2.de-emphasized Business Days
+        div
+          .ib.third
+            h3 Scheduled
+            h1 {{ project.metrics().scheduled_working_days }}
+          .ib.third
+            h3 Elapsed
+            h1 {{ project.metrics().elapsed_working_days }}
+          .ib.third
+            h3 Remaining
+            h1 {{ project.metrics().remaining_working_days }}
+
+
+
+
+
+        h2 Baseline Tasks
+
+        .grid
+          .group
+            .metric.col.span_2_of_6
+              .metric-value {{ project.metrics().tasks }}
+              .metric-label Total
+            .metric.col.span_2_of_6
+              .metric-value {{ project.metrics().tasks_completed }}
+              .metric-label Completed
+            .metric.col.span_2_of_6
+              .metric-value {{ project.metrics().tasks -  project.metrics().tasks_completed }}
+              .metric-label Remaining
+
+
+      section
+        h1 Activity
+
+        h2 Tasks
+        | {{  project.attributes.counter_tasks_completed }} / 
+        | {{  project.attributes.counter_tasks }} 
+        h2 Scope Changes
+        | {{ project.attributes.scope_changes_completed }} / 
+        | {{ project.attributes.scope_changes }}
+
+        h2 Folders
+        | {{ project.attributes.folders }}
+
+        h2 Time Entries
+
+        | last time entry: {{ project.attributes.last_time_entry }}
+
+        h2 Comments
+        | {{ project.attributes.counter_comments }}
+        | Last comments added on: {{ project.attributes.last_comment }}
+        h2 Attachments
+
+        | {{ project.attributes.counter_attachments }}
+        | Last attachment added on: {{ project.attributes.last_attachment }}
+

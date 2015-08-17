@@ -1,0 +1,23 @@
+h1.title People and Projects
+
+section
+
+  h1 Person Name
+
+  table
+    thead
+      tr
+        th %
+        th Stage
+        th Project
+        th Role
+        th Assigned Hours
+        th % of Assigned Hours
+    tbody
+      tr(ng-repeat= "project in report.data.projects | orderBy:project.name")
+        td {{ project.percent_complete }}
+        td {{ project.stage }}
+        td {{ project.name }}
+        td role
+        td 0000
+        td 0000%

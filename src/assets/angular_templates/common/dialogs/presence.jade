@@ -1,0 +1,18 @@
+md-dialog(aria-label="Update Time")
+  md-content
+    .form-container
+      h1 Presence
+      fieldset
+        field
+        label.col-lg-2.control-label(for ="is_billable")
+        .col-lg-10
+          .checkbox
+            label
+              input(type="checkbox", name="user[is_away]")
+              | I am Away   
+        field
+          label.col-lg-2.control-label(for = "description") Description
+          textarea(rows = "8", name= "user[description]")
+  .md-actions
+    md-button.md-primary(ng-click="save()", md-no-ink="true") Save
+    md-button(ng-click="cancel()", md-no-ink="true") Cancel

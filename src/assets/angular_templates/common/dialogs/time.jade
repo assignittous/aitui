@@ -1,0 +1,15 @@
+md-dialog(aria-label="Update Time")
+  md-content
+    .form-container
+      h1 Update Time
+      fieldset
+        field
+          label Effort Spent On Task
+          input(type="text", ng-model="effort_entry", ng-change="updateTime(effort_entry)")
+        field
+          label(ng-bind="effort_entry | humanEffort")
+        field
+          md-checkbox(md-no-ink="true" ng-model="is_billable") Is Billable
+  .md-actions
+    md-button.md-primary(ng-click="save()", md-no-ink="true") Save
+    md-button(md-no-ink="true" ng-click="cancel()") Cancel

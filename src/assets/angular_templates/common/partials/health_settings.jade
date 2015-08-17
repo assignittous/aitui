@@ -1,0 +1,169 @@
+fieldset
+  h3 Percent Complete
+
+  
+  field
+    label Importance
+    md-radio-group(md-no-ink="true" ng-model="project.attributes.health_settings.percent_complete.importance")
+      md-radio-button(value= "critical") Critical
+      md-radio-button(value= "normal") Normal
+      md-radio-button(value= "unimportant") Unimportant
+    
+
+
+  field(ng-class="healthFieldVisibility(project.attributes.health_settings.percent_complete.importance)")
+    label Thresholds
+    p
+      | If my <b>current</b> percentage complete is greater than or equal to
+      | &nbsp;
+      input.w50.ar(type='text', ng-model="project.attributes.health_settings.percent_complete.threshold_yellow")
+      
+      | &nbsp;
+      | percentage points behind the <b>expected</b> percentage complete, then the percent_complete health will be <b>yellow</b>
+    p
+    
+      | If my <b>current</b> percentage complete is greater than or equal to
+      | &nbsp;
+      input.w50.ar(type='text',ng-model="project.attributes.health_settings.percent_complete.threshold_red")
+      | &nbsp;
+      | percentage points behind the <b>expected</b> percentage complete, then the progress health will be <b>red</b>                  
+      
+
+
+fieldset
+  h3 Effort
+
+  
+  field
+    label Importance
+    md-radio-group(md-no-ink="true" ng-model="project.attributes.health_settings.effort.importance")
+      md-radio-button(value= "critical") Critical
+      md-radio-button(value= "normal") Normal
+      md-radio-button(value= "unimportant") Unimportant              
+
+    
+    
+
+  field(ng-class="healthFieldVisibility(project.attributes.health_settings.effort.importance)")
+
+
+    p              
+      | If my forecast total effort is greater than or equal to 
+      | &nbsp;
+      input.w50.ar(type= 'text', ng-model= "project.attributes.health_settings.effort.threshold_yellow")
+      
+      | &nbsp;
+      | of my total scheduled effort, then the effort health will be <b>yellow</b>
+        
+    p
+  
+      | If my forecast total effort is greater than or equal to 
+      | &nbsp;
+      input.w50.ar(type= 'text', ng-model= "project.attributes.health_settings.effort.threshold_red")
+      
+      | &nbsp;
+      | of my total scheduled effort, then the effort health will be <b>red</b>          
+
+
+
+fieldset
+  h3 Scope
+
+
+  field
+
+    label Importance
+    md-radio-group(md-no-ink="true" ng-model="project.attributes.health_settings.scope.importance", "ng-init"="")
+      md-radio-button(value= "critical") Critical
+      md-radio-button(value= "normal") Normal
+      md-radio-button(value= "unimportant") Unimportant                            
+    
+  field(ng-class="healthFieldVisibility(project.attributes.health_settings.scope.importance)")               
+    label Thresholds         
+
+    p
+    
+      | If my total effort (including baseline and scope change effort) is greater than or equal to 
+      | &nbsp;
+      input.w50.ar(type='text', ng-model= "project.attributes.health_settings.scope.threshold_yellow")
+      
+      | &nbsp;
+      | of my total baseline effort, then the scope health will be <b>yellow</b>
+    p
+      | If my total effort (including baseline and scope change effort) is greater than or equal to 
+      | &nbsp;
+      input.w50.ar(type='text', ng-model= "project.attributes.health_settings.scope.threshold_red")
+      
+      | &nbsp;
+      | of my total baseline effort, then the scope health will be <b>red</b>                
+      
+
+
+
+fieldset
+  h3 Billing
+
+
+  field
+
+    label Importance
+    md-radio-group(md-no-ink="true" ng-model="project.attributes.health_settings.billing.importance")
+      md-radio-button(value= "critical") Critical
+      md-radio-button(value= "normal") Normal
+      md-radio-button(value= "unimportant") Unimportant                             
+    
+  field(ng-class="healthFieldVisibility(project.attributes.health_settings.billing.importance)")         
+    p
+      | If my actual billings is greater than or equal to 
+      | &nbsp;
+      input.w50.ar(type = 'text', ng-model= "project.attributes.health_settings.billing.threshold_yellow")
+      
+      | &nbsp;
+      | of my expected billings, then the Budget billing health will be <b>yellow</b>
+    p
+    
+      | If my actual billings is greater than or equal to 
+      | &nbsp;
+      input.w50.ar(type = 'text', ng-model= "project.attributes.health_settings.billing.threshold_red")
+      
+      | &nbsp;
+      | of my expected billings, then the Budget Burn health will be <b>red</b>                
+
+
+
+ 
+fieldset
+  h3 Flags
+
+  field
+
+    label Importance
+    md-radio-group(md-no-ink="true" ng-model="project.attributes.health_settings.flags.importance")
+      md-radio-button(value= "critical") Critical
+      md-radio-button(value= "normal") Normal
+      md-radio-button(value= "unimportant") Unimportant                            
+    
+  field(ng-class="healthFieldVisibility(project.attributes.health_settings.flags.importance)")
+    label Thresholds
+    p
+    
+      | If
+      | &nbsp;
+      input.w50.ar(type= 'text', ng-model= "project.attributes.health_settings.flags.threshold_yellow")
+      | &nbsp;
+      | team members raise a flag, the flag health will be <b>yellow</b>
+
+    p
+    
+      | If  
+      | &nbsp;
+      input.w50.ar(type= 'text', ng-model= "project.attributes.health_settings.flags.threshold_red")
+      | &nbsp;
+      | team members raise a flag, the flag health will be <b>red</b>  
+    p
+      i If both thresholds are the same, then health will be red when the threshold is met.     
+
+
+
+
+

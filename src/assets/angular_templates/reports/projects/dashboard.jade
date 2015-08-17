@@ -1,0 +1,84 @@
+h1.title Projects Dashboard
+
+section
+  h1 Projects Overview
+
+  .grid
+    .group
+      .metric.col.span_1_of_6
+        .metric-value 0000
+        .metric-label Total Projects
+      .metric.col.span_1_of_6
+        .metric-value 0000
+        .metric-label Active
+      .metric.col.span_1_of_6
+        .metric-value 0000
+        .metric-label At Risk (RED)
+      .metric.col.span_1_of_6
+        .metric-value 0000
+        .metric-label Draft
+      .metric.col.span_1_of_6
+        .metric-value 0000
+        .metric-label Closed
+      .metric.col.span_1_of_6
+        .metric-value 0000
+        .metric-label Cancelled
+
+section
+  h1 Active Projects
+
+  table
+    thead
+      tr
+        th.l Code
+        th.l Name
+        th.c Start
+        th.c End
+        th Progress
+    tbody(ng-repeat= "project in report.data.projects | orderBy:project.name")
+      tr
+        td(ng-bind="project.code")
+        td(ng-bind="project.name")
+        td.c(ng-bind="project.scheduled_start")
+        td.c(ng-bind="project.scheduled_end")
+        td.r(ng-bind="project.percent_complete")
+
+
+section
+  h1 Upcoming (Draft) Projects
+
+  table
+    thead
+      tr
+        th.l Code
+        th.l Name
+        th.c Start
+        th.c End
+        th Progress
+    tbody(ng-repeat= "project in report.data.projects | orderBy:project.name")
+      tr
+        td(ng-bind="project.code")
+        td(ng-bind="project.name")
+        td.c(ng-bind="project.scheduled_start")
+        td.c(ng-bind="project.scheduled_end")
+        td.r(ng-bind="project.percent_complete")
+
+section
+  h1 Recently Closed Projects
+
+
+  table
+    thead
+      tr
+        th.l Code
+        th.l Name
+        th.c Start
+        th.c End
+        th Progress
+    tbody(ng-repeat= "project in report.data.projects | orderBy:project.name")
+      tr
+        td(ng-bind="project.code")
+        td(ng-bind="project.name")
+        td.c(ng-bind="project.scheduled_start")
+        td.c(ng-bind="project.scheduled_end")
+        td.r(ng-bind="project.percent_complete")

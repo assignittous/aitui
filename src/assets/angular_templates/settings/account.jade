@@ -1,0 +1,115 @@
+header
+  nav
+    md-tabs(md-no-ink="true" "md-selected" = "data.selectedIndex")
+      md-tab#general("aria-controls" = "general-content") General
+      md-tab#defaults("aria-controls" = "defaults-content") Defaults
+      md-tab#health("aria-controls" = "health-content") Project Health
+      md-tab#subscription("aria-controls" = "subscription-content") Subscription
+.form-container
+  ng-switch.tabpanel-container(on = "data.selectedIndex")
+    #general-content("aria-labelledby" = "general", "md-swipe-left" = "next()", "md-swipe-right" = "previous()", "ng-switch-when" = "0", role = "tabpanel")
+      section
+        fieldset
+          h2 General
+          field
+            label Site Name
+            input(type="text", ng-model='settings.attributes.name')
+          field
+            label Site Path
+            input(type="text", ng-model='settings.attributes.path',  disabled='true')
+            span Your site path is not editable.
+          field
+            label Company Name
+            input(type="text", ng-model='settings.attributes.organization')              
+          field
+            label Administrative User
+            input(type="text",   disabled='true')              
+          field
+            md-button.md-flat.md-primary(ng-click='regenerate()', md-no-ink="true") Update General Information
+      section
+        fieldset
+          h2 System API Key
+          field
+            label System API Key
+            input(type="text", ng-model='settings.attributes.api_token',  disabled='true')
+          field
+            md-button.md-flat.md-primary(ng-click='regenerateApi()', md-no-ink="true") Regenerate API Key   
+    #defaults-content("aria-labelledby" = "defaults", "md-swipe-left" = "next()", "md-swipe-right" = "previous()", "ng-switch-when" = "1", role = "tabpanel")
+      section
+        fieldset  
+          h2 General Defaults
+          field
+            label Default Role
+            input(type= 'text', ng-model="settings.attributes.project_defaults.default_role")
+          field
+            label Default Hourly Rate
+            input(type= 'text', ng-model="settings.attributes.project_defaults.default_rate")
+          field
+            label Working Days
+          field
+            md-checkbox(md-no-ink="true" "aria-label"= "Sunday", ng-model="settings.working_days.sun", ng-true-value="0") S
+            md-checkbox(md-no-ink="true" "aria-label"= "Monday",  ng-model="settings.working_days.mon", ng-true-value="1") M
+            md-checkbox(md-no-ink="true" "aria-label"= "Tuesday", ng-model="settings.working_days.tue", ng-true-value="2") T
+            md-checkbox(md-no-ink="true" "aria-label"= "Wednesday",  ng-model="settings.working_days.wed", ng-true-value="3") W
+            md-checkbox(md-no-ink="true" "aria-label"= "Thursday", ng-model="settings.working_days.thu", ng-true-value="4") T
+            md-checkbox(md-no-ink="true" "aria-label"= "Friday",  ng-model="settings.working_days.fri", ng-true-value="5") F
+            md-checkbox(md-no-ink="true" "aria-label"= "Saturday", ng-model="settings.working_days.sat", ng-true-value="6") S
+          field
+            label Working Hours Per Day
+            input(type= 'text', ng-model='working_hours_per_day', ng-change="updateEffort(working_hours_per_day)")
+            span(ng-bind="working_hours_per_day | humanEffort")
+          field
+            label Core Hours Start
+            input(type= 'text', ng-model="settings.attributes.project_defaults.core_hours_start")
+          field
+            label Core Hours End
+            input(type= 'text', ng-model="settings.attributes.project_defaults.core_hours_end")
+          field
+            md-button.md-flat.md-primary( ng-click="updateGeneralDefaults()") Update General Defaults  
+      section
+        fieldset
+          h2 Task Defaults
+          field
+            md-checkbox(md-no-ink="true" "aria-label"= "Tasks are billable", ng-model="settings.attributes.project_defaults.is_billable") Tasks are billable
+          field
+            md-checkbox(md-no-ink="true" "aria-label"= "Tasks are statused by checklist",  ng-model="settings.attributes.project_defaults.is_statused_by_checklist") Tasks are statused by checklist
+          field
+            md-button.md-flat.md-primary(ng-click='updateTaskDefaults()') Update Task Defaults
+    #health-content("aria-labelledby" = "health", "md-swipe-left" = "next()", "md-swipe-right" = "previous()", "ng-switch-when" = "2", role = "tabpanel")
+      section
+        fieldset
+          h2 Health Settings
+
+        div(ng-include="'common/partials/health_settings.html'")
+        div
+          md-button.md-primary.md-flat(ng-click="updateHealth()", md-no-ink="true") Save Project Health Defaults
+    #subscription-content("aria-labelledby" = "subscription", "md-swipe-left" = "next()", "md-swipe-right" = "previous()", "ng-switch-when" = "3", role = "tabpanel")
+      section
+        fieldset
+          h2 Subscription
+          field
+            label Plan
+            input(type="text", ng-model='api_token',  disabled='true')
+          field
+            label Subscription
+            input(type="text", ng-model='api_token',  disabled='true')
+          field
+            label Billing Address
+            input(type="text", ng-model='api_token',  disabled='true')                
+          field
+            label Billing City
+            input(type="text", ng-model='api_token',  disabled='true')
+          field
+            label Billing State / Province
+            input(type="text", ng-model='api_token',  disabled='true')
+          field
+            label Billing Country
+            input(type="text", ng-model='api_token',  disabled='true')                
+          field
+            label Billing Postal / Zip Code
+            input(type="text", ng-model='api_token',  disabled='true')
+          field
+            label Billing Phone
+            input(type="text", ng-model='api_token',  disabled='true')
+          field
+            md-button.md-flat.md-primary(ng-click='updateSubscription()') Update Subscriber Info          
